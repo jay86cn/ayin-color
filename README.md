@@ -13,6 +13,27 @@
 </h1>
 <div align="center">AyinColor是一款颜色库工具，为了免于记忆类似#FF000、RGB(255,0,0)、这样的颜色值，方便在开发中调用各种预设的颜色，所以开发了此工具。</div>
 
+# 目录介绍
+
+主要为以下3个目录：
+- **aYinColor-V1 source**-第一版的源码
+- **aYinColor-V2 source**-第二版的源码
+- **npm publish package**-发布到npm打包后的版本
+
+如果只是使用的话，请阅读说明文档后，根据 【项目中使用】小节配置，如果需要二次迭代开发，请下载V1和V2的源码修改迭代。
+
+
+
+**颜色表查看，请到这里** 
+
+- [V1颜色表](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)   
+- [V2颜色表](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)
+
+Gitee无法识别html标签中的颜色值，所以无法在本页面展现颜色表。
+
+
+
+
 # 简介
 
 <img src="./demo/AyinColorV1-top.png" width="800"/>
@@ -268,9 +289,6 @@ Less代码
 **AyinColorV1、V2的JS版本和CSS版均已开源**，可以随意在任意项目上使用（需保留包中的声明信息）。
 
 **npm地址如下 [AyinColor](https://www.npmjs.com/package/ayin-color?activeTab=readme)**
-
-从NPM服务器安装
-`npm i ayin-color --save`
 
 
 其内部文件列表如下：
