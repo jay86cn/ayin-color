@@ -1,0 +1,26 @@
+{
+  "name": "ayin-color",
+  "version": "1.0.9",
+  "description": "由ayin开发的js版和less版的颜色表，用于js中的取色，如echarts，svg等。Please read readme.md for English description!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "color",
+    "theme",
+    "hue",
+    "color palette",
+    "chroma.js",
+    "ayinColor",
+    "echart theme"
+  ],
+  "dependencies": {
+    "ayin-lessmixins": "*",
+    "chroma-js": "*",
+    "less": "*",
+    "less-loader": "*"
+  },
+  "author": "ayin86@163.com wx:ayin86cn",
+  "license": "No license"
+}

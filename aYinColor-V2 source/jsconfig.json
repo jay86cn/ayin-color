@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": false,//解决vetur告警  differs from file name  only in casing. Vetur
+  },
+  "exclude": [
+  ]
+}

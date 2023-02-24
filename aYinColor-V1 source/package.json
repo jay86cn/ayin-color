@@ -1,0 +1,31 @@
+{
+  "name": "acolor-vue",
+  "version": "1.0.0",
+  "description": "ayin's less and js color project",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build-test": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "chroma-js": "^1.4.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "vue": "^2.5.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.5.19",
+    "@vue/cli-service": "^4.5.19",
+    "babel-eslint": "^10.1.0",
+    "style-resources-loader": "^1.5.0",
+    "vue-cli-plugin-style-resources-loader": "^0.1.5",
+    "vue-template-compiler": "^2.7.14"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

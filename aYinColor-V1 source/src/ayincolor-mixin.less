@@ -1,0 +1,2132 @@
+/*
+code by ayin86@163.com 
+css&js分别有1323种颜色
+chsname=["红","红橙","橙","橙黄","黄","黄草","草绿","草绿-绿","绿","绿-水绿","水绿","水绿-青","青","青蓝","蓝","蓝靛","靛","靛紫","紫","紫粉","粉","粉-洋红","洋红","洋红-红","灰"];
+engname=["red","red-orange","orange","orange-yellow","yellow","yellow-chartreuse","chartreuse","chartreuse-green","green","green-aquamarine","aquamarine","aquamarine-cyan","cyan","cyan-blue","blue","blue-indigo","indigo","indigo-purple","purple","purple-pink","pink","pink-violetred","violetred","violetred-red","gray"];
+colors=["re","ro","or","oy","ye","yc","ch","cg","gr","ga","aq","ac","cy","cb","bl","bi","in","ip","pu","pp","pi","pv","vi","vr","gy"];
+*/
+
+@basered:#ff0000;//基础红色ff0000;
+//fade透明,lighten明度,darken变暗,spin色相,de/saturate饱和度+-,mix/
+//100%-000,90%-222,80%-333,70%-444,60%-666,50%-777,40%-999,30%-bbb,20%-ccc,10%-eee,5%-f5f5f5
+//"red","ro","orange","oy","yellow","yc","chartreuse","cg","green","ga","aquamarine","ac","cyan","cb","blue","bi","indigo","ip","purple","pp","pink","pv","violetred","vr","gray"
+//"re","ro","or","oy","ye","yc","ch","cg","gr","ga","aq","ac","cy","cb","bl","bi","in","ip","pu","pp","pi","pv","vi","vr","gy"
+@cl:-20%;
+@cm:-40%;
+@cr:-60%;
+@cd:-80%;
+
+@spin1:-20;
+@spin2:-15;
+@spin3:-10;
+@spin4:-5;
+@spin5:0;
+@spin6:5;
+@spin7:10;
+@spin8:15;
+@spin9:20;
+
+@re:spin(@basered,0);
+@ro:spin(@basered,15);
+@or:spin(@basered,30);
+@oy:spin(@basered,45);
+@ye:spin(@basered,60);
+@yc:spin(@basered,75);
+@ch:spin(@basered,90);
+@cg:spin(@basered,105);
+@gr:spin(@basered,120);
+@ga:spin(@basered,135);
+@aq:spin(@basered,150);
+@ac:spin(@basered,165);
+@cy:spin(@basered,180);
+@cb:spin(@basered,195);
+@bl:spin(@basered,210);
+@bi:spin(@basered,225);
+@in:spin(@basered,240);
+@ip:spin(@basered,255);
+@pu:spin(@basered,270);
+@pp:spin(@basered,285);
+@pi:spin(@basered,300);
+@pv:spin(@basered,315);
+@vi:spin(@basered,330);
+@vr:spin(@basered,345);
+
+@rel:saturate(@re,@cl); 
+@rem:saturate(@re,@cm); 
+@rer:saturate(@re,@cr); 
+@red:saturate(@re,@cd); 
+@rol:saturate(@ro,@cl); 
+@rom:saturate(@ro,@cm); 
+@ror:saturate(@ro,@cr); 
+@rod:saturate(@ro,@cd); 
+@orl:saturate(@or,@cl); 
+@orm:saturate(@or,@cm); 
+@orr:saturate(@or,@cr); 
+@ord:saturate(@or,@cd); 
+@oyl:saturate(@oy,@cl); 
+@oym:saturate(@oy,@cm); 
+@oyr:saturate(@oy,@cr); 
+@oyd:saturate(@oy,@cd); 
+@yel:saturate(@ye,@cl); 
+@yem:saturate(@ye,@cm); 
+@yer:saturate(@ye,@cr); 
+@yed:saturate(@ye,@cd); 
+@ycl:saturate(@yc,@cl); 
+@ycm:saturate(@yc,@cm); 
+@ycr:saturate(@yc,@cr); 
+@ycd:saturate(@yc,@cd); 
+@chl:saturate(@ch,@cl); 
+@chm:saturate(@ch,@cm); 
+@chr:saturate(@ch,@cr); 
+@chd:saturate(@ch,@cd); 
+@cgl:saturate(@cg,@cl); 
+@cgm:saturate(@cg,@cm); 
+@cgr:saturate(@cg,@cr); 
+@cgd:saturate(@cg,@cd); 
+@grl:saturate(@gr,@cl); 
+@grm:saturate(@gr,@cm); 
+@grr:saturate(@gr,@cr); 
+@grd:saturate(@gr,@cd); 
+@gal:saturate(@ga,@cl); 
+@gam:saturate(@ga,@cm); 
+@gar:saturate(@ga,@cr); 
+@gad:saturate(@ga,@cd); 
+@aql:saturate(@aq,@cl); 
+@aqm:saturate(@aq,@cm); 
+@aqr:saturate(@aq,@cr); 
+@aqd:saturate(@aq,@cd); 
+@acl:saturate(@ac,@cl); 
+@acm:saturate(@ac,@cm); 
+@acr:saturate(@ac,@cr); 
+@acd:saturate(@ac,@cd); 
+@cyl:saturate(@cy,@cl); 
+@cym:saturate(@cy,@cm); 
+@cyr:saturate(@cy,@cr); 
+@cyd:saturate(@cy,@cd); 
+@cbl:saturate(@cb,@cl); 
+@cbm:saturate(@cb,@cm); 
+@cbr:saturate(@cb,@cr); 
+@cbd:saturate(@cb,@cd); 
+@bll:saturate(@bl,@cl); 
+@blm:saturate(@bl,@cm); 
+@blr:saturate(@bl,@cr); 
+@bld:saturate(@bl,@cd); 
+@bil:saturate(@bi,@cl); 
+@bim:saturate(@bi,@cm); 
+@bir:saturate(@bi,@cr); 
+@bid:saturate(@bi,@cd); 
+@inl:saturate(@in,@cl); 
+@inm:saturate(@in,@cm); 
+@inr:saturate(@in,@cr); 
+@ind:saturate(@in,@cd); 
+@ipl:saturate(@ip,@cl); 
+@ipm:saturate(@ip,@cm); 
+@ipr:saturate(@ip,@cr); 
+@ipd:saturate(@ip,@cd); 
+@pul:saturate(@pu,@cl); 
+@pum:saturate(@pu,@cm); 
+@pur:saturate(@pu,@cr); 
+@pud:saturate(@pu,@cd); 
+@ppl:saturate(@pp,@cl); 
+@ppm:saturate(@pp,@cm); 
+@ppr:saturate(@pp,@cr); 
+@ppd:saturate(@pp,@cd); 
+@pil:saturate(@pi,@cl); 
+@pim:saturate(@pi,@cm); 
+@pir:saturate(@pi,@cr); 
+@pid:saturate(@pi,@cd); 
+@pvl:saturate(@pv,@cl); 
+@pvm:saturate(@pv,@cm); 
+@pvr:saturate(@pv,@cr); 
+@pvd:saturate(@pv,@cd); 
+@vil:saturate(@vi,@cl); 
+@vim:saturate(@vi,@cm); 
+@vir:saturate(@vi,@cr); 
+@vid:saturate(@vi,@cd); 
+@vrl:saturate(@vr,@cl); 
+@vrm:saturate(@vr,@cm); 
+@vrr:saturate(@vr,@cr); 
+@vrd:saturate(@vr,@cd); 
+
+@wh:#fff;
+@bk:#000;
+@gy:#ccc;
+@tr:transparent;
+
+@gyl:lighten(@bk,75%);
+@gym:lighten(@bk,50%);
+@gyd:lighten(@bk,30%);
+
+@level4:40%;
+@level3:30%;
+@level2:20%;
+@level1:10%;
+@level0:0%;
+
+.gy(@num){@gy:lighten(@bk,@num);}
+
+@gyl0:lighten(@bk,98.27%);
+@gyl1:lighten(@bk,97.54%);
+@gyl2:lighten(@bk,92.81%);
+@gyl3:lighten(@bk,90.08%);
+@gyl4:lighten(@bk,87.35%);
+@gyl5:lighten(@bk,84.62%);
+@gyl6:lighten(@bk,81.89%);
+@gyl7:lighten(@bk,79.16%);
+@gyl8:lighten(@bk,76.43%);
+@gyl9:lighten(@bk,73.70%);
+
+@gym1:lighten(@bk,70.97%);
+@gym2:lighten(@bk,68.24%);
+@gym3:lighten(@bk,65.51%);
+@gym4:lighten(@bk,62.78%);
+@gym5:lighten(@bk,60.05%);
+@gym6:lighten(@bk,57.32%);
+@gym7:lighten(@bk,54.59%);
+@gym8:lighten(@bk,51.86%);
+@gym9:lighten(@bk,49.13%);
+
+@gyr1:lighten(@bk,46.40%);
+@gyr2:lighten(@bk,43.67%);
+@gyr3:lighten(@bk,40.94%);
+@gyr4:lighten(@bk,38.21%);
+@gyr5:lighten(@bk,35.48%);
+@gyr6:lighten(@bk,32.75%);
+@gyr7:lighten(@bk,30.02%);
+@gyr8:lighten(@bk,27.29%);
+@gyr9:lighten(@bk,24.56%);
+
+@gyd1:lighten(@bk,21.83%);
+@gyd2:lighten(@bk,19.10%);
+@gyd3:lighten(@bk,16.37%);
+@gyd4:lighten(@bk,13.64%);
+@gyd5:lighten(@bk,10.91%);
+@gyd6:lighten(@bk,8.18%);
+@gyd7:lighten(@bk,5.45%);
+@gyd8:lighten(@bk,2.72%);
+@gyd9:lighten(@bk,0%);
+
+
+@rel1:lighten(@rel,@level4);
+@rel2:lighten(@rel,@level3);
+@rel3:lighten(@rel,@level2);
+@rel4:lighten(@rel,@level1);
+@rel5:lighten(@rel,@level0);
+@rel6:darken(@rel,@level1);
+@rel7:darken(@rel,@level2);
+@rel8:darken(@rel,@level3);
+@rel9:darken(@rel,@level4);
+
+@rem1:lighten(@rem,@level4);
+@rem2:lighten(@rem,@level3);
+@rem3:lighten(@rem,@level2);
+@rem4:lighten(@rem,@level1);
+@rem5:lighten(@rem,@level0);
+@rem6:darken(@rem,@level1);
+@rem7:darken(@rem,@level2);
+@rem8:darken(@rem,@level3);
+@rem9:darken(@rem,@level4);
+
+@rer1:lighten(@rer,@level4);
+@rer2:lighten(@rer,@level3);
+@rer3:lighten(@rer,@level2);
+@rer4:lighten(@rer,@level1);
+@rer5:lighten(@rer,@level0);
+@rer6:darken(@rer,@level1);
+@rer7:darken(@rer,@level2);
+@rer8:darken(@rer,@level3);
+@rer9:darken(@rer,@level4);
+
+@red1:lighten(@red,@level4);
+@red2:lighten(@red,@level3);
+@red3:lighten(@red,@level2);
+@red4:lighten(@red,@level1);
+@red5:lighten(@red,@level0);
+@red6:darken(@red,@level1);
+@red7:darken(@red,@level2);
+@red8:darken(@red,@level3);
+@red9:darken(@red,@level4);
+
+@rol1:lighten(@rol,@level4);
+@rol2:lighten(@rol,@level3);
+@rol3:lighten(@rol,@level2);
+@rol4:lighten(@rol,@level1);
+@rol5:lighten(@rol,@level0);
+@rol6:darken(@rol,@level1);
+@rol7:darken(@rol,@level2);
+@rol8:darken(@rol,@level3);
+@rol9:darken(@rol,@level4);
+
+@rom1:lighten(@rom,@level4);
+@rom2:lighten(@rom,@level3);
+@rom3:lighten(@rom,@level2);
+@rom4:lighten(@rom,@level1);
+@rom5:lighten(@rom,@level0);
+@rom6:darken(@rom,@level1);
+@rom7:darken(@rom,@level2);
+@rom8:darken(@rom,@level3);
+@rom9:darken(@rom,@level4);
+
+@ror1:lighten(@ror,@level4);
+@ror2:lighten(@ror,@level3);
+@ror3:lighten(@ror,@level2);
+@ror4:lighten(@ror,@level1);
+@ror5:lighten(@ror,@level0);
+@ror6:darken(@ror,@level1);
+@ror7:darken(@ror,@level2);
+@ror8:darken(@ror,@level3);
+@ror9:darken(@ror,@level4);
+
+@rod1:lighten(@rod,@level4);
+@rod2:lighten(@rod,@level3);
+@rod3:lighten(@rod,@level2);
+@rod4:lighten(@rod,@level1);
+@rod5:lighten(@rod,@level0);
+@rod6:darken(@rod,@level1);
+@rod7:darken(@rod,@level2);
+@rod8:darken(@rod,@level3);
+@rod9:darken(@rod,@level4);
+
+@orl1:lighten(@orl,@level4);
+@orl2:lighten(@orl,@level3);
+@orl3:lighten(@orl,@level2);
+@orl4:lighten(@orl,@level1);
+@orl5:lighten(@orl,@level0);
+@orl6:darken(@orl,@level1);
+@orl7:darken(@orl,@level2);
+@orl8:darken(@orl,@level3);
+@orl9:darken(@orl,@level4);
+
+@orm1:lighten(@orm,@level4);
+@orm2:lighten(@orm,@level3);
+@orm3:lighten(@orm,@level2);
+@orm4:lighten(@orm,@level1);
+@orm5:lighten(@orm,@level0);
+@orm6:darken(@orm,@level1);
+@orm7:darken(@orm,@level2);
+@orm8:darken(@orm,@level3);
+@orm9:darken(@orm,@level4);
+
+@orr1:lighten(@orr,@level4);
+@orr2:lighten(@orr,@level3);
+@orr3:lighten(@orr,@level2);
+@orr4:lighten(@orr,@level1);
+@orr5:lighten(@orr,@level0);
+@orr6:darken(@orr,@level1);
+@orr7:darken(@orr,@level2);
+@orr8:darken(@orr,@level3);
+@orr9:darken(@orr,@level4);
+
+@ord1:lighten(@ord,@level4);
+@ord2:lighten(@ord,@level3);
+@ord3:lighten(@ord,@level2);
+@ord4:lighten(@ord,@level1);
+@ord5:lighten(@ord,@level0);
+@ord6:darken(@ord,@level1);
+@ord7:darken(@ord,@level2);
+@ord8:darken(@ord,@level3);
+@ord9:darken(@ord,@level4);
+
+@oyl1:lighten(@oyl,@level4);
+@oyl2:lighten(@oyl,@level3);
+@oyl3:lighten(@oyl,@level2);
+@oyl4:lighten(@oyl,@level1);
+@oyl5:lighten(@oyl,@level0);
+@oyl6:darken(@oyl,@level1);
+@oyl7:darken(@oyl,@level2);
+@oyl8:darken(@oyl,@level3);
+@oyl9:darken(@oyl,@level4);
+
+@oym1:lighten(@oym,@level4);
+@oym2:lighten(@oym,@level3);
+@oym3:lighten(@oym,@level2);
+@oym4:lighten(@oym,@level1);
+@oym5:lighten(@oym,@level0);
+@oym6:darken(@oym,@level1);
+@oym7:darken(@oym,@level2);
+@oym8:darken(@oym,@level3);
+@oym9:darken(@oym,@level4);
+
+@oyr1:lighten(@oyr,@level4);
+@oyr2:lighten(@oyr,@level3);
+@oyr3:lighten(@oyr,@level2);
+@oyr4:lighten(@oyr,@level1);
+@oyr5:lighten(@oyr,@level0);
+@oyr6:darken(@oyr,@level1);
+@oyr7:darken(@oyr,@level2);
+@oyr8:darken(@oyr,@level3);
+@oyr9:darken(@oyr,@level4);
+
+@oyd1:lighten(@oyd,@level4);
+@oyd2:lighten(@oyd,@level3);
+@oyd3:lighten(@oyd,@level2);
+@oyd4:lighten(@oyd,@level1);
+@oyd5:lighten(@oyd,@level0);
+@oyd6:darken(@oyd,@level1);
+@oyd7:darken(@oyd,@level2);
+@oyd8:darken(@oyd,@level3);
+@oyd9:darken(@oyd,@level4);
+
+@yel1:lighten(@yel,@level4);
+@yel2:lighten(@yel,@level3);
+@yel3:lighten(@yel,@level2);
+@yel4:lighten(@yel,@level1);
+@yel5:lighten(@yel,@level0);
+@yel6:darken(@yel,@level1);
+@yel7:darken(@yel,@level2);
+@yel8:darken(@yel,@level3);
+@yel9:darken(@yel,@level4);
+
+@yem1:lighten(@yem,@level4);
+@yem2:lighten(@yem,@level3);
+@yem3:lighten(@yem,@level2);
+@yem4:lighten(@yem,@level1);
+@yem5:lighten(@yem,@level0);
+@yem6:darken(@yem,@level1);
+@yem7:darken(@yem,@level2);
+@yem8:darken(@yem,@level3);
+@yem9:darken(@yem,@level4);
+
+@yer1:lighten(@yer,@level4);
+@yer2:lighten(@yer,@level3);
+@yer3:lighten(@yer,@level2);
+@yer4:lighten(@yer,@level1);
+@yer5:lighten(@yer,@level0);
+@yer6:darken(@yer,@level1);
+@yer7:darken(@yer,@level2);
+@yer8:darken(@yer,@level3);
+@yer9:darken(@yer,@level4);
+
+@yed1:lighten(@yed,@level4);
+@yed2:lighten(@yed,@level3);
+@yed3:lighten(@yed,@level2);
+@yed4:lighten(@yed,@level1);
+@yed5:lighten(@yed,@level0);
+@yed6:darken(@yed,@level1);
+@yed7:darken(@yed,@level2);
+@yed8:darken(@yed,@level3);
+@yed9:darken(@yed,@level4);
+
+@ycl1:lighten(@ycl,@level4);
+@ycl2:lighten(@ycl,@level3);
+@ycl3:lighten(@ycl,@level2);
+@ycl4:lighten(@ycl,@level1);
+@ycl5:lighten(@ycl,@level0);
+@ycl6:darken(@ycl,@level1);
+@ycl7:darken(@ycl,@level2);
+@ycl8:darken(@ycl,@level3);
+@ycl9:darken(@ycl,@level4);
+
+@ycm1:lighten(@ycm,@level4);
+@ycm2:lighten(@ycm,@level3);
+@ycm3:lighten(@ycm,@level2);
+@ycm4:lighten(@ycm,@level1);
+@ycm5:lighten(@ycm,@level0);
+@ycm6:darken(@ycm,@level1);
+@ycm7:darken(@ycm,@level2);
+@ycm8:darken(@ycm,@level3);
+@ycm9:darken(@ycm,@level4);
+
+@ycr1:lighten(@ycr,@level4);
+@ycr2:lighten(@ycr,@level3);
+@ycr3:lighten(@ycr,@level2);
+@ycr4:lighten(@ycr,@level1);
+@ycr5:lighten(@ycr,@level0);
+@ycr6:darken(@ycr,@level1);
+@ycr7:darken(@ycr,@level2);
+@ycr8:darken(@ycr,@level3);
+@ycr9:darken(@ycr,@level4);
+
+@ycd1:lighten(@ycd,@level4);
+@ycd2:lighten(@ycd,@level3);
+@ycd3:lighten(@ycd,@level2);
+@ycd4:lighten(@ycd,@level1);
+@ycd5:lighten(@ycd,@level0);
+@ycd6:darken(@ycd,@level1);
+@ycd7:darken(@ycd,@level2);
+@ycd8:darken(@ycd,@level3);
+@ycd9:darken(@ycd,@level4);
+
+@chl1:lighten(@chl,@level4);
+@chl2:lighten(@chl,@level3);
+@chl3:lighten(@chl,@level2);
+@chl4:lighten(@chl,@level1);
+@chl5:lighten(@chl,@level0);
+@chl6:darken(@chl,@level1);
+@chl7:darken(@chl,@level2);
+@chl8:darken(@chl,@level3);
+@chl9:darken(@chl,@level4);
+
+@chm1:lighten(@chm,@level4);
+@chm2:lighten(@chm,@level3);
+@chm3:lighten(@chm,@level2);
+@chm4:lighten(@chm,@level1);
+@chm5:lighten(@chm,@level0);
+@chm6:darken(@chm,@level1);
+@chm7:darken(@chm,@level2);
+@chm8:darken(@chm,@level3);
+@chm9:darken(@chm,@level4);
+
+@chr1:lighten(@chr,@level4);
+@chr2:lighten(@chr,@level3);
+@chr3:lighten(@chr,@level2);
+@chr4:lighten(@chr,@level1);
+@chr5:lighten(@chr,@level0);
+@chr6:darken(@chr,@level1);
+@chr7:darken(@chr,@level2);
+@chr8:darken(@chr,@level3);
+@chr9:darken(@chr,@level4);
+
+@chd1:lighten(@chd,@level4);
+@chd2:lighten(@chd,@level3);
+@chd3:lighten(@chd,@level2);
+@chd4:lighten(@chd,@level1);
+@chd5:lighten(@chd,@level0);
+@chd6:darken(@chd,@level1);
+@chd7:darken(@chd,@level2);
+@chd8:darken(@chd,@level3);
+@chd9:darken(@chd,@level4);
+
+@cgl1:lighten(@cgl,@level4);
+@cgl2:lighten(@cgl,@level3);
+@cgl3:lighten(@cgl,@level2);
+@cgl4:lighten(@cgl,@level1);
+@cgl5:lighten(@cgl,@level0);
+@cgl6:darken(@cgl,@level1);
+@cgl7:darken(@cgl,@level2);
+@cgl8:darken(@cgl,@level3);
+@cgl9:darken(@cgl,@level4);
+
+@cgm1:lighten(@cgm,@level4);
+@cgm2:lighten(@cgm,@level3);
+@cgm3:lighten(@cgm,@level2);
+@cgm4:lighten(@cgm,@level1);
+@cgm5:lighten(@cgm,@level0);
+@cgm6:darken(@cgm,@level1);
+@cgm7:darken(@cgm,@level2);
+@cgm8:darken(@cgm,@level3);
+@cgm9:darken(@cgm,@level4);
+
+@cgr1:lighten(@cgr,@level4);
+@cgr2:lighten(@cgr,@level3);
+@cgr3:lighten(@cgr,@level2);
+@cgr4:lighten(@cgr,@level1);
+@cgr5:lighten(@cgr,@level0);
+@cgr6:darken(@cgr,@level1);
+@cgr7:darken(@cgr,@level2);
+@cgr8:darken(@cgr,@level3);
+@cgr9:darken(@cgr,@level4);
+
+@cgd1:lighten(@cgd,@level4);
+@cgd2:lighten(@cgd,@level3);
+@cgd3:lighten(@cgd,@level2);
+@cgd4:lighten(@cgd,@level1);
+@cgd5:lighten(@cgd,@level0);
+@cgd6:darken(@cgd,@level1);
+@cgd7:darken(@cgd,@level2);
+@cgd8:darken(@cgd,@level3);
+@cgd9:darken(@cgd,@level4);
+
+@grl1:lighten(@grl,@level4);
+@grl2:lighten(@grl,@level3);
+@grl3:lighten(@grl,@level2);
+@grl4:lighten(@grl,@level1);
+@grl5:lighten(@grl,@level0);
+@grl6:darken(@grl,@level1);
+@grl7:darken(@grl,@level2);
+@grl8:darken(@grl,@level3);
+@grl9:darken(@grl,@level4);
+
+@grm1:lighten(@grm,@level4);
+@grm2:lighten(@grm,@level3);
+@grm3:lighten(@grm,@level2);
+@grm4:lighten(@grm,@level1);
+@grm5:lighten(@grm,@level0);
+@grm6:darken(@grm,@level1);
+@grm7:darken(@grm,@level2);
+@grm8:darken(@grm,@level3);
+@grm9:darken(@grm,@level4);
+
+@grr1:lighten(@grr,@level4);
+@grr2:lighten(@grr,@level3);
+@grr3:lighten(@grr,@level2);
+@grr4:lighten(@grr,@level1);
+@grr5:lighten(@grr,@level0);
+@grr6:darken(@grr,@level1);
+@grr7:darken(@grr,@level2);
+@grr8:darken(@grr,@level3);
+@grr9:darken(@grr,@level4);
+
+@grd1:lighten(@grd,@level4);
+@grd2:lighten(@grd,@level3);
+@grd3:lighten(@grd,@level2);
+@grd4:lighten(@grd,@level1);
+@grd5:lighten(@grd,@level0);
+@grd6:darken(@grd,@level1);
+@grd7:darken(@grd,@level2);
+@grd8:darken(@grd,@level3);
+@grd9:darken(@grd,@level4);
+
+@gal1:lighten(@gal,@level4);
+@gal2:lighten(@gal,@level3);
+@gal3:lighten(@gal,@level2);
+@gal4:lighten(@gal,@level1);
+@gal5:lighten(@gal,@level0);
+@gal6:darken(@gal,@level1);
+@gal7:darken(@gal,@level2);
+@gal8:darken(@gal,@level3);
+@gal9:darken(@gal,@level4);
+
+@gam1:lighten(@gam,@level4);
+@gam2:lighten(@gam,@level3);
+@gam3:lighten(@gam,@level2);
+@gam4:lighten(@gam,@level1);
+@gam5:lighten(@gam,@level0);
+@gam6:darken(@gam,@level1);
+@gam7:darken(@gam,@level2);
+@gam8:darken(@gam,@level3);
+@gam9:darken(@gam,@level4);
+
+@gar1:lighten(@gar,@level4);
+@gar2:lighten(@gar,@level3);
+@gar3:lighten(@gar,@level2);
+@gar4:lighten(@gar,@level1);
+@gar5:lighten(@gar,@level0);
+@gar6:darken(@gar,@level1);
+@gar7:darken(@gar,@level2);
+@gar8:darken(@gar,@level3);
+@gar9:darken(@gar,@level4);
+
+@gad1:lighten(@gad,@level4);
+@gad2:lighten(@gad,@level3);
+@gad3:lighten(@gad,@level2);
+@gad4:lighten(@gad,@level1);
+@gad5:lighten(@gad,@level0);
+@gad6:darken(@gad,@level1);
+@gad7:darken(@gad,@level2);
+@gad8:darken(@gad,@level3);
+@gad9:darken(@gad,@level4);
+
+@aql1:lighten(@aql,@level4);
+@aql2:lighten(@aql,@level3);
+@aql3:lighten(@aql,@level2);
+@aql4:lighten(@aql,@level1);
+@aql5:lighten(@aql,@level0);
+@aql6:darken(@aql,@level1);
+@aql7:darken(@aql,@level2);
+@aql8:darken(@aql,@level3);
+@aql9:darken(@aql,@level4);
+
+@aqm1:lighten(@aqm,@level4);
+@aqm2:lighten(@aqm,@level3);
+@aqm3:lighten(@aqm,@level2);
+@aqm4:lighten(@aqm,@level1);
+@aqm5:lighten(@aqm,@level0);
+@aqm6:darken(@aqm,@level1);
+@aqm7:darken(@aqm,@level2);
+@aqm8:darken(@aqm,@level3);
+@aqm9:darken(@aqm,@level4);
+
+@aqr1:lighten(@aqr,@level4);
+@aqr2:lighten(@aqr,@level3);
+@aqr3:lighten(@aqr,@level2);
+@aqr4:lighten(@aqr,@level1);
+@aqr5:lighten(@aqr,@level0);
+@aqr6:darken(@aqr,@level1);
+@aqr7:darken(@aqr,@level2);
+@aqr8:darken(@aqr,@level3);
+@aqr9:darken(@aqr,@level4);
+
+@aqd1:lighten(@aqd,@level4);
+@aqd2:lighten(@aqd,@level3);
+@aqd3:lighten(@aqd,@level2);
+@aqd4:lighten(@aqd,@level1);
+@aqd5:lighten(@aqd,@level0);
+@aqd6:darken(@aqd,@level1);
+@aqd7:darken(@aqd,@level2);
+@aqd8:darken(@aqd,@level3);
+@aqd9:darken(@aqd,@level4);
+
+@acl1:lighten(@acl,@level4);
+@acl2:lighten(@acl,@level3);
+@acl3:lighten(@acl,@level2);
+@acl4:lighten(@acl,@level1);
+@acl5:lighten(@acl,@level0);
+@acl6:darken(@acl,@level1);
+@acl7:darken(@acl,@level2);
+@acl8:darken(@acl,@level3);
+@acl9:darken(@acl,@level4);
+
+@acm1:lighten(@acm,@level4);
+@acm2:lighten(@acm,@level3);
+@acm3:lighten(@acm,@level2);
+@acm4:lighten(@acm,@level1);
+@acm5:lighten(@acm,@level0);
+@acm6:darken(@acm,@level1);
+@acm7:darken(@acm,@level2);
+@acm8:darken(@acm,@level3);
+@acm9:darken(@acm,@level4);
+
+@acr1:lighten(@acr,@level4);
+@acr2:lighten(@acr,@level3);
+@acr3:lighten(@acr,@level2);
+@acr4:lighten(@acr,@level1);
+@acr5:lighten(@acr,@level0);
+@acr6:darken(@acr,@level1);
+@acr7:darken(@acr,@level2);
+@acr8:darken(@acr,@level3);
+@acr9:darken(@acr,@level4);
+
+@acd1:lighten(@acd,@level4);
+@acd2:lighten(@acd,@level3);
+@acd3:lighten(@acd,@level2);
+@acd4:lighten(@acd,@level1);
+@acd5:lighten(@acd,@level0);
+@acd6:darken(@acd,@level1);
+@acd7:darken(@acd,@level2);
+@acd8:darken(@acd,@level3);
+@acd9:darken(@acd,@level4);
+
+@cyl1:lighten(@cyl,@level4);
+@cyl2:lighten(@cyl,@level3);
+@cyl3:lighten(@cyl,@level2);
+@cyl4:lighten(@cyl,@level1);
+@cyl5:lighten(@cyl,@level0);
+@cyl6:darken(@cyl,@level1);
+@cyl7:darken(@cyl,@level2);
+@cyl8:darken(@cyl,@level3);
+@cyl9:darken(@cyl,@level4);
+
+@cym1:lighten(@cym,@level4);
+@cym2:lighten(@cym,@level3);
+@cym3:lighten(@cym,@level2);
+@cym4:lighten(@cym,@level1);
+@cym5:lighten(@cym,@level0);
+@cym6:darken(@cym,@level1);
+@cym7:darken(@cym,@level2);
+@cym8:darken(@cym,@level3);
+@cym9:darken(@cym,@level4);
+
+@cyr1:lighten(@cyr,@level4);
+@cyr2:lighten(@cyr,@level3);
+@cyr3:lighten(@cyr,@level2);
+@cyr4:lighten(@cyr,@level1);
+@cyr5:lighten(@cyr,@level0);
+@cyr6:darken(@cyr,@level1);
+@cyr7:darken(@cyr,@level2);
+@cyr8:darken(@cyr,@level3);
+@cyr9:darken(@cyr,@level4);
+
+@cyd1:lighten(@cyd,@level4);
+@cyd2:lighten(@cyd,@level3);
+@cyd3:lighten(@cyd,@level2);
+@cyd4:lighten(@cyd,@level1);
+@cyd5:lighten(@cyd,@level0);
+@cyd6:darken(@cyd,@level1);
+@cyd7:darken(@cyd,@level2);
+@cyd8:darken(@cyd,@level3);
+@cyd9:darken(@cyd,@level4);
+
+@cbl1:lighten(@cbl,@level4);
+@cbl2:lighten(@cbl,@level3);
+@cbl3:lighten(@cbl,@level2);
+@cbl4:lighten(@cbl,@level1);
+@cbl5:lighten(@cbl,@level0);
+@cbl6:darken(@cbl,@level1);
+@cbl7:darken(@cbl,@level2);
+@cbl8:darken(@cbl,@level3);
+@cbl9:darken(@cbl,@level4);
+
+@cbm1:lighten(@cbm,@level4);
+@cbm2:lighten(@cbm,@level3);
+@cbm3:lighten(@cbm,@level2);
+@cbm4:lighten(@cbm,@level1);
+@cbm5:lighten(@cbm,@level0);
+@cbm6:darken(@cbm,@level1);
+@cbm7:darken(@cbm,@level2);
+@cbm8:darken(@cbm,@level3);
+@cbm9:darken(@cbm,@level4);
+
+@cbr1:lighten(@cbr,@level4);
+@cbr2:lighten(@cbr,@level3);
+@cbr3:lighten(@cbr,@level2);
+@cbr4:lighten(@cbr,@level1);
+@cbr5:lighten(@cbr,@level0);
+@cbr6:darken(@cbr,@level1);
+@cbr7:darken(@cbr,@level2);
+@cbr8:darken(@cbr,@level3);
+@cbr9:darken(@cbr,@level4);
+
+@cbd1:lighten(@cbd,@level4);
+@cbd2:lighten(@cbd,@level3);
+@cbd3:lighten(@cbd,@level2);
+@cbd4:lighten(@cbd,@level1);
+@cbd5:lighten(@cbd,@level0);
+@cbd6:darken(@cbd,@level1);
+@cbd7:darken(@cbd,@level2);
+@cbd8:darken(@cbd,@level3);
+@cbd9:darken(@cbd,@level4);
+
+@bll1:lighten(@bll,@level4);
+@bll2:lighten(@bll,@level3);
+@bll3:lighten(@bll,@level2);
+@bll4:lighten(@bll,@level1);
+@bll5:lighten(@bll,@level0);
+@bll6:darken(@bll,@level1);
+@bll7:darken(@bll,@level2);
+@bll8:darken(@bll,@level3);
+@bll9:darken(@bll,@level4);
+
+@blm1:lighten(@blm,@level4);
+@blm2:lighten(@blm,@level3);
+@blm3:lighten(@blm,@level2);
+@blm4:lighten(@blm,@level1);
+@blm5:lighten(@blm,@level0);
+@blm6:darken(@blm,@level1);
+@blm7:darken(@blm,@level2);
+@blm8:darken(@blm,@level3);
+@blm9:darken(@blm,@level4);
+
+@blr1:lighten(@blr,@level4);
+@blr2:lighten(@blr,@level3);
+@blr3:lighten(@blr,@level2);
+@blr4:lighten(@blr,@level1);
+@blr5:lighten(@blr,@level0);
+@blr6:darken(@blr,@level1);
+@blr7:darken(@blr,@level2);
+@blr8:darken(@blr,@level3);
+@blr9:darken(@blr,@level4);
+
+@bld1:lighten(@bld,@level4);
+@bld2:lighten(@bld,@level3);
+@bld3:lighten(@bld,@level2);
+@bld4:lighten(@bld,@level1);
+@bld5:lighten(@bld,@level0);
+@bld6:darken(@bld,@level1);
+@bld7:darken(@bld,@level2);
+@bld8:darken(@bld,@level3);
+@bld9:darken(@bld,@level4);
+
+@bil1:lighten(@bil,@level4);
+@bil2:lighten(@bil,@level3);
+@bil3:lighten(@bil,@level2);
+@bil4:lighten(@bil,@level1);
+@bil5:lighten(@bil,@level0);
+@bil6:darken(@bil,@level1);
+@bil7:darken(@bil,@level2);
+@bil8:darken(@bil,@level3);
+@bil9:darken(@bil,@level4);
+
+@bim1:lighten(@bim,@level4);
+@bim2:lighten(@bim,@level3);
+@bim3:lighten(@bim,@level2);
+@bim4:lighten(@bim,@level1);
+@bim5:lighten(@bim,@level0);
+@bim6:darken(@bim,@level1);
+@bim7:darken(@bim,@level2);
+@bim8:darken(@bim,@level3);
+@bim9:darken(@bim,@level4);
+
+@bir1:lighten(@bir,@level4);
+@bir2:lighten(@bir,@level3);
+@bir3:lighten(@bir,@level2);
+@bir4:lighten(@bir,@level1);
+@bir5:lighten(@bir,@level0);
+@bir6:darken(@bir,@level1);
+@bir7:darken(@bir,@level2);
+@bir8:darken(@bir,@level3);
+@bir9:darken(@bir,@level4);
+
+@bid1:lighten(@bid,@level4);
+@bid2:lighten(@bid,@level3);
+@bid3:lighten(@bid,@level2);
+@bid4:lighten(@bid,@level1);
+@bid5:lighten(@bid,@level0);
+@bid6:darken(@bid,@level1);
+@bid7:darken(@bid,@level2);
+@bid8:darken(@bid,@level3);
+@bid9:darken(@bid,@level4);
+
+@inl1:lighten(@inl,@level4);
+@inl2:lighten(@inl,@level3);
+@inl3:lighten(@inl,@level2);
+@inl4:lighten(@inl,@level1);
+@inl5:lighten(@inl,@level0);
+@inl6:darken(@inl,@level1);
+@inl7:darken(@inl,@level2);
+@inl8:darken(@inl,@level3);
+@inl9:darken(@inl,@level4);
+
+@inm1:lighten(@inm,@level4);
+@inm2:lighten(@inm,@level3);
+@inm3:lighten(@inm,@level2);
+@inm4:lighten(@inm,@level1);
+@inm5:lighten(@inm,@level0);
+@inm6:darken(@inm,@level1);
+@inm7:darken(@inm,@level2);
+@inm8:darken(@inm,@level3);
+@inm9:darken(@inm,@level4);
+
+@inr1:lighten(@inr,@level4);
+@inr2:lighten(@inr,@level3);
+@inr3:lighten(@inr,@level2);
+@inr4:lighten(@inr,@level1);
+@inr5:lighten(@inr,@level0);
+@inr6:darken(@inr,@level1);
+@inr7:darken(@inr,@level2);
+@inr8:darken(@inr,@level3);
+@inr9:darken(@inr,@level4);
+
+@ind1:lighten(@ind,@level4);
+@ind2:lighten(@ind,@level3);
+@ind3:lighten(@ind,@level2);
+@ind4:lighten(@ind,@level1);
+@ind5:lighten(@ind,@level0);
+@ind6:darken(@ind,@level1);
+@ind7:darken(@ind,@level2);
+@ind8:darken(@ind,@level3);
+@ind9:darken(@ind,@level4);
+
+@ipl1:lighten(@ipl,@level4);
+@ipl2:lighten(@ipl,@level3);
+@ipl3:lighten(@ipl,@level2);
+@ipl4:lighten(@ipl,@level1);
+@ipl5:lighten(@ipl,@level0);
+@ipl6:darken(@ipl,@level1);
+@ipl7:darken(@ipl,@level2);
+@ipl8:darken(@ipl,@level3);
+@ipl9:darken(@ipl,@level4);
+
+@ipm1:lighten(@ipm,@level4);
+@ipm2:lighten(@ipm,@level3);
+@ipm3:lighten(@ipm,@level2);
+@ipm4:lighten(@ipm,@level1);
+@ipm5:lighten(@ipm,@level0);
+@ipm6:darken(@ipm,@level1);
+@ipm7:darken(@ipm,@level2);
+@ipm8:darken(@ipm,@level3);
+@ipm9:darken(@ipm,@level4);
+
+@ipr1:lighten(@ipr,@level4);
+@ipr2:lighten(@ipr,@level3);
+@ipr3:lighten(@ipr,@level2);
+@ipr4:lighten(@ipr,@level1);
+@ipr5:lighten(@ipr,@level0);
+@ipr6:darken(@ipr,@level1);
+@ipr7:darken(@ipr,@level2);
+@ipr8:darken(@ipr,@level3);
+@ipr9:darken(@ipr,@level4);
+
+@ipd1:lighten(@ipd,@level4);
+@ipd2:lighten(@ipd,@level3);
+@ipd3:lighten(@ipd,@level2);
+@ipd4:lighten(@ipd,@level1);
+@ipd5:lighten(@ipd,@level0);
+@ipd6:darken(@ipd,@level1);
+@ipd7:darken(@ipd,@level2);
+@ipd8:darken(@ipd,@level3);
+@ipd9:darken(@ipd,@level4);
+
+@pul1:lighten(@pul,@level4);
+@pul2:lighten(@pul,@level3);
+@pul3:lighten(@pul,@level2);
+@pul4:lighten(@pul,@level1);
+@pul5:lighten(@pul,@level0);
+@pul6:darken(@pul,@level1);
+@pul7:darken(@pul,@level2);
+@pul8:darken(@pul,@level3);
+@pul9:darken(@pul,@level4);
+
+@pum1:lighten(@pum,@level4);
+@pum2:lighten(@pum,@level3);
+@pum3:lighten(@pum,@level2);
+@pum4:lighten(@pum,@level1);
+@pum5:lighten(@pum,@level0);
+@pum6:darken(@pum,@level1);
+@pum7:darken(@pum,@level2);
+@pum8:darken(@pum,@level3);
+@pum9:darken(@pum,@level4);
+
+@pur1:lighten(@pur,@level4);
+@pur2:lighten(@pur,@level3);
+@pur3:lighten(@pur,@level2);
+@pur4:lighten(@pur,@level1);
+@pur5:lighten(@pur,@level0);
+@pur6:darken(@pur,@level1);
+@pur7:darken(@pur,@level2);
+@pur8:darken(@pur,@level3);
+@pur9:darken(@pur,@level4);
+
+@pud1:lighten(@pud,@level4);
+@pud2:lighten(@pud,@level3);
+@pud3:lighten(@pud,@level2);
+@pud4:lighten(@pud,@level1);
+@pud5:lighten(@pud,@level0);
+@pud6:darken(@pud,@level1);
+@pud7:darken(@pud,@level2);
+@pud8:darken(@pud,@level3);
+@pud9:darken(@pud,@level4);
+
+@ppl1:lighten(@ppl,@level4);
+@ppl2:lighten(@ppl,@level3);
+@ppl3:lighten(@ppl,@level2);
+@ppl4:lighten(@ppl,@level1);
+@ppl5:lighten(@ppl,@level0);
+@ppl6:darken(@ppl,@level1);
+@ppl7:darken(@ppl,@level2);
+@ppl8:darken(@ppl,@level3);
+@ppl9:darken(@ppl,@level4);
+
+@ppm1:lighten(@ppm,@level4);
+@ppm2:lighten(@ppm,@level3);
+@ppm3:lighten(@ppm,@level2);
+@ppm4:lighten(@ppm,@level1);
+@ppm5:lighten(@ppm,@level0);
+@ppm6:darken(@ppm,@level1);
+@ppm7:darken(@ppm,@level2);
+@ppm8:darken(@ppm,@level3);
+@ppm9:darken(@ppm,@level4);
+
+@ppr1:lighten(@ppr,@level4);
+@ppr2:lighten(@ppr,@level3);
+@ppr3:lighten(@ppr,@level2);
+@ppr4:lighten(@ppr,@level1);
+@ppr5:lighten(@ppr,@level0);
+@ppr6:darken(@ppr,@level1);
+@ppr7:darken(@ppr,@level2);
+@ppr8:darken(@ppr,@level3);
+@ppr9:darken(@ppr,@level4);
+
+@ppd1:lighten(@ppd,@level4);
+@ppd2:lighten(@ppd,@level3);
+@ppd3:lighten(@ppd,@level2);
+@ppd4:lighten(@ppd,@level1);
+@ppd5:lighten(@ppd,@level0);
+@ppd6:darken(@ppd,@level1);
+@ppd7:darken(@ppd,@level2);
+@ppd8:darken(@ppd,@level3);
+@ppd9:darken(@ppd,@level4);
+
+@pil1:lighten(@pil,@level4);
+@pil2:lighten(@pil,@level3);
+@pil3:lighten(@pil,@level2);
+@pil4:lighten(@pil,@level1);
+@pil5:lighten(@pil,@level0);
+@pil6:darken(@pil,@level1);
+@pil7:darken(@pil,@level2);
+@pil8:darken(@pil,@level3);
+@pil9:darken(@pil,@level4);
+
+@pim1:lighten(@pim,@level4);
+@pim2:lighten(@pim,@level3);
+@pim3:lighten(@pim,@level2);
+@pim4:lighten(@pim,@level1);
+@pim5:lighten(@pim,@level0);
+@pim6:darken(@pim,@level1);
+@pim7:darken(@pim,@level2);
+@pim8:darken(@pim,@level3);
+@pim9:darken(@pim,@level4);
+
+@pir1:lighten(@pir,@level4);
+@pir2:lighten(@pir,@level3);
+@pir3:lighten(@pir,@level2);
+@pir4:lighten(@pir,@level1);
+@pir5:lighten(@pir,@level0);
+@pir6:darken(@pir,@level1);
+@pir7:darken(@pir,@level2);
+@pir8:darken(@pir,@level3);
+@pir9:darken(@pir,@level4);
+
+@pid1:lighten(@pid,@level4);
+@pid2:lighten(@pid,@level3);
+@pid3:lighten(@pid,@level2);
+@pid4:lighten(@pid,@level1);
+@pid5:lighten(@pid,@level0);
+@pid6:darken(@pid,@level1);
+@pid7:darken(@pid,@level2);
+@pid8:darken(@pid,@level3);
+@pid9:darken(@pid,@level4);
+
+@pvl1:lighten(@pvl,@level4);
+@pvl2:lighten(@pvl,@level3);
+@pvl3:lighten(@pvl,@level2);
+@pvl4:lighten(@pvl,@level1);
+@pvl5:lighten(@pvl,@level0);
+@pvl6:darken(@pvl,@level1);
+@pvl7:darken(@pvl,@level2);
+@pvl8:darken(@pvl,@level3);
+@pvl9:darken(@pvl,@level4);
+
+@pvm1:lighten(@pvm,@level4);
+@pvm2:lighten(@pvm,@level3);
+@pvm3:lighten(@pvm,@level2);
+@pvm4:lighten(@pvm,@level1);
+@pvm5:lighten(@pvm,@level0);
+@pvm6:darken(@pvm,@level1);
+@pvm7:darken(@pvm,@level2);
+@pvm8:darken(@pvm,@level3);
+@pvm9:darken(@pvm,@level4);
+
+@pvr1:lighten(@pvr,@level4);
+@pvr2:lighten(@pvr,@level3);
+@pvr3:lighten(@pvr,@level2);
+@pvr4:lighten(@pvr,@level1);
+@pvr5:lighten(@pvr,@level0);
+@pvr6:darken(@pvr,@level1);
+@pvr7:darken(@pvr,@level2);
+@pvr8:darken(@pvr,@level3);
+@pvr9:darken(@pvr,@level4);
+
+@pvd1:lighten(@pvd,@level4);
+@pvd2:lighten(@pvd,@level3);
+@pvd3:lighten(@pvd,@level2);
+@pvd4:lighten(@pvd,@level1);
+@pvd5:lighten(@pvd,@level0);
+@pvd6:darken(@pvd,@level1);
+@pvd7:darken(@pvd,@level2);
+@pvd8:darken(@pvd,@level3);
+@pvd9:darken(@pvd,@level4);
+
+@vil1:lighten(@vil,@level4);
+@vil2:lighten(@vil,@level3);
+@vil3:lighten(@vil,@level2);
+@vil4:lighten(@vil,@level1);
+@vil5:lighten(@vil,@level0);
+@vil6:darken(@vil,@level1);
+@vil7:darken(@vil,@level2);
+@vil8:darken(@vil,@level3);
+@vil9:darken(@vil,@level4);
+
+@vim1:lighten(@vim,@level4);
+@vim2:lighten(@vim,@level3);
+@vim3:lighten(@vim,@level2);
+@vim4:lighten(@vim,@level1);
+@vim5:lighten(@vim,@level0);
+@vim6:darken(@vim,@level1);
+@vim7:darken(@vim,@level2);
+@vim8:darken(@vim,@level3);
+@vim9:darken(@vim,@level4);
+
+@vir1:lighten(@vir,@level4);
+@vir2:lighten(@vir,@level3);
+@vir3:lighten(@vir,@level2);
+@vir4:lighten(@vir,@level1);
+@vir5:lighten(@vir,@level0);
+@vir6:darken(@vir,@level1);
+@vir7:darken(@vir,@level2);
+@vir8:darken(@vir,@level3);
+@vir9:darken(@vir,@level4);
+
+@vid1:lighten(@vid,@level4);
+@vid2:lighten(@vid,@level3);
+@vid3:lighten(@vid,@level2);
+@vid4:lighten(@vid,@level1);
+@vid5:lighten(@vid,@level0);
+@vid6:darken(@vid,@level1);
+@vid7:darken(@vid,@level2);
+@vid8:darken(@vid,@level3);
+@vid9:darken(@vid,@level4);
+
+@vrl1:lighten(@vrl,@level4);
+@vrl2:lighten(@vrl,@level3);
+@vrl3:lighten(@vrl,@level2);
+@vrl4:lighten(@vrl,@level1);
+@vrl5:lighten(@vrl,@level0);
+@vrl6:darken(@vrl,@level1);
+@vrl7:darken(@vrl,@level2);
+@vrl8:darken(@vrl,@level3);
+@vrl9:darken(@vrl,@level4);
+
+@vrm1:lighten(@vrm,@level4);
+@vrm2:lighten(@vrm,@level3);
+@vrm3:lighten(@vrm,@level2);
+@vrm4:lighten(@vrm,@level1);
+@vrm5:lighten(@vrm,@level0);
+@vrm6:darken(@vrm,@level1);
+@vrm7:darken(@vrm,@level2);
+@vrm8:darken(@vrm,@level3);
+@vrm9:darken(@vrm,@level4);
+
+@vrr1:lighten(@vrr,@level4);
+@vrr2:lighten(@vrr,@level3);
+@vrr3:lighten(@vrr,@level2);
+@vrr4:lighten(@vrr,@level1);
+@vrr5:lighten(@vrr,@level0);
+@vrr6:darken(@vrr,@level1);
+@vrr7:darken(@vrr,@level2);
+@vrr8:darken(@vrr,@level3);
+@vrr9:darken(@vrr,@level4);
+
+@vrd1:lighten(@vrd,@level4);
+@vrd2:lighten(@vrd,@level3);
+@vrd3:lighten(@vrd,@level2);
+@vrd4:lighten(@vrd,@level1);
+@vrd5:lighten(@vrd,@level0);
+@vrd6:darken(@vrd,@level1);
+@vrd7:darken(@vrd,@level2);
+@vrd8:darken(@vrd,@level3);
+@vrd9:darken(@vrd,@level4);
+
+
+//color H ---------------------------------
+@rehl1:lighten( spin(@rel,@spin1) ,@level4);
+@rehl2:lighten( spin(@rel,@spin2) ,@level3);
+@rehl3:lighten( spin(@rel,@spin3) ,@level2);
+@rehl4:lighten( spin(@rel,@spin4) ,@level1);
+@rehl5:lighten( spin(@rel,@spin5) ,@level0);
+@rehl6:darken( spin(@rel,@spin6) ,@level1);
+@rehl7:darken( spin(@rel,@spin7) ,@level2);
+@rehl8:darken( spin(@rel,@spin8) ,@level3);
+@rehl9:darken( spin(@rel,@spin9) ,@level4);
+
+@rehm1:lighten( spin(@rem,@spin1) ,@level4);
+@rehm2:lighten( spin(@rem,@spin2) ,@level3);
+@rehm3:lighten( spin(@rem,@spin3) ,@level2);
+@rehm4:lighten( spin(@rem,@spin4) ,@level1);
+@rehm5:lighten( spin(@rem,@spin5) ,@level0);
+@rehm6:darken( spin(@rem,@spin6) ,@level1);
+@rehm7:darken( spin(@rem,@spin7) ,@level2);
+@rehm8:darken( spin(@rem,@spin8) ,@level3);
+@rehm9:darken( spin(@rem,@spin9) ,@level4);
+
+@rehr1:lighten( spin(@rer,@spin1) ,@level4);
+@rehr2:lighten( spin(@rer,@spin2) ,@level3);
+@rehr3:lighten( spin(@rer,@spin3) ,@level2);
+@rehr4:lighten( spin(@rer,@spin4) ,@level1);
+@rehr5:lighten( spin(@rer,@spin5) ,@level0);
+@rehr6:darken( spin(@rer,@spin6) ,@level1);
+@rehr7:darken( spin(@rer,@spin7) ,@level2);
+@rehr8:darken( spin(@rer,@spin8) ,@level3);
+@rehr9:darken( spin(@rer,@spin9) ,@level4);
+
+@rehd1:lighten( spin(@red,@spin1) ,@level4);
+@rehd2:lighten( spin(@red,@spin2) ,@level3);
+@rehd3:lighten( spin(@red,@spin3) ,@level2);
+@rehd4:lighten( spin(@red,@spin4) ,@level1);
+@rehd5:lighten( spin(@red,@spin5) ,@level0);
+@rehd6:darken( spin(@red,@spin6) ,@level1);
+@rehd7:darken( spin(@red,@spin7) ,@level2);
+@rehd8:darken( spin(@red,@spin8) ,@level3);
+@rehd9:darken( spin(@red,@spin9) ,@level4);
+
+@rohl1:lighten( spin(@rol,@spin1) ,@level4);
+@rohl2:lighten( spin(@rol,@spin2) ,@level3);
+@rohl3:lighten( spin(@rol,@spin3) ,@level2);
+@rohl4:lighten( spin(@rol,@spin4) ,@level1);
+@rohl5:lighten( spin(@rol,@spin5) ,@level0);
+@rohl6:darken( spin(@rol,@spin6) ,@level1);
+@rohl7:darken( spin(@rol,@spin7) ,@level2);
+@rohl8:darken( spin(@rol,@spin8) ,@level3);
+@rohl9:darken( spin(@rol,@spin9) ,@level4);
+
+@rohm1:lighten( spin(@rom,@spin1) ,@level4);
+@rohm2:lighten( spin(@rom,@spin2) ,@level3);
+@rohm3:lighten( spin(@rom,@spin3) ,@level2);
+@rohm4:lighten( spin(@rom,@spin4) ,@level1);
+@rohm5:lighten( spin(@rom,@spin5) ,@level0);
+@rohm6:darken( spin(@rom,@spin6) ,@level1);
+@rohm7:darken( spin(@rom,@spin7) ,@level2);
+@rohm8:darken( spin(@rom,@spin8) ,@level3);
+@rohm9:darken( spin(@rom,@spin9) ,@level4);
+
+@rohr1:lighten( spin(@ror,@spin1) ,@level4);
+@rohr2:lighten( spin(@ror,@spin2) ,@level3);
+@rohr3:lighten( spin(@ror,@spin3) ,@level2);
+@rohr4:lighten( spin(@ror,@spin4) ,@level1);
+@rohr5:lighten( spin(@ror,@spin5) ,@level0);
+@rohr6:darken( spin(@ror,@spin6) ,@level1);
+@rohr7:darken( spin(@ror,@spin7) ,@level2);
+@rohr8:darken( spin(@ror,@spin8) ,@level3);
+@rohr9:darken( spin(@ror,@spin9) ,@level4);
+
+@rohd1:lighten( spin(@rod,@spin1) ,@level4);
+@rohd2:lighten( spin(@rod,@spin2) ,@level3);
+@rohd3:lighten( spin(@rod,@spin3) ,@level2);
+@rohd4:lighten( spin(@rod,@spin4) ,@level1);
+@rohd5:lighten( spin(@rod,@spin5) ,@level0);
+@rohd6:darken( spin(@rod,@spin6) ,@level1);
+@rohd7:darken( spin(@rod,@spin7) ,@level2);
+@rohd8:darken( spin(@rod,@spin8) ,@level3);
+@rohd9:darken( spin(@rod,@spin9) ,@level4);
+
+@orhl1:lighten( spin(@orl,@spin1) ,@level4);
+@orhl2:lighten( spin(@orl,@spin2) ,@level3);
+@orhl3:lighten( spin(@orl,@spin3) ,@level2);
+@orhl4:lighten( spin(@orl,@spin4) ,@level1);
+@orhl5:lighten( spin(@orl,@spin5) ,@level0);
+@orhl6:darken( spin(@orl,@spin6) ,@level1);
+@orhl7:darken( spin(@orl,@spin7) ,@level2);
+@orhl8:darken( spin(@orl,@spin8) ,@level3);
+@orhl9:darken( spin(@orl,@spin9) ,@level4);
+
+@orhm1:lighten( spin(@orm,@spin1) ,@level4);
+@orhm2:lighten( spin(@orm,@spin2) ,@level3);
+@orhm3:lighten( spin(@orm,@spin3) ,@level2);
+@orhm4:lighten( spin(@orm,@spin4) ,@level1);
+@orhm5:lighten( spin(@orm,@spin5) ,@level0);
+@orhm6:darken( spin(@orm,@spin6) ,@level1);
+@orhm7:darken( spin(@orm,@spin7) ,@level2);
+@orhm8:darken( spin(@orm,@spin8) ,@level3);
+@orhm9:darken( spin(@orm,@spin9) ,@level4);
+
+@orhr1:lighten( spin(@orr,@spin1) ,@level4);
+@orhr2:lighten( spin(@orr,@spin2) ,@level3);
+@orhr3:lighten( spin(@orr,@spin3) ,@level2);
+@orhr4:lighten( spin(@orr,@spin4) ,@level1);
+@orhr5:lighten( spin(@orr,@spin5) ,@level0);
+@orhr6:darken( spin(@orr,@spin6) ,@level1);
+@orhr7:darken( spin(@orr,@spin7) ,@level2);
+@orhr8:darken( spin(@orr,@spin8) ,@level3);
+@orhr9:darken( spin(@orr,@spin9) ,@level4);
+
+@orhd1:lighten( spin(@ord,@spin1) ,@level4);
+@orhd2:lighten( spin(@ord,@spin2) ,@level3);
+@orhd3:lighten( spin(@ord,@spin3) ,@level2);
+@orhd4:lighten( spin(@ord,@spin4) ,@level1);
+@orhd5:lighten( spin(@ord,@spin5) ,@level0);
+@orhd6:darken( spin(@ord,@spin6) ,@level1);
+@orhd7:darken( spin(@ord,@spin7) ,@level2);
+@orhd8:darken( spin(@ord,@spin8) ,@level3);
+@orhd9:darken( spin(@ord,@spin9) ,@level4);
+
+@oyhl1:lighten( spin(@oyl,@spin1) ,@level4);
+@oyhl2:lighten( spin(@oyl,@spin2) ,@level3);
+@oyhl3:lighten( spin(@oyl,@spin3) ,@level2);
+@oyhl4:lighten( spin(@oyl,@spin4) ,@level1);
+@oyhl5:lighten( spin(@oyl,@spin5) ,@level0);
+@oyhl6:darken( spin(@oyl,@spin6) ,@level1);
+@oyhl7:darken( spin(@oyl,@spin7) ,@level2);
+@oyhl8:darken( spin(@oyl,@spin8) ,@level3);
+@oyhl9:darken( spin(@oyl,@spin9) ,@level4);
+
+@oyhm1:lighten( spin(@oym,@spin1) ,@level4);
+@oyhm2:lighten( spin(@oym,@spin2) ,@level3);
+@oyhm3:lighten( spin(@oym,@spin3) ,@level2);
+@oyhm4:lighten( spin(@oym,@spin4) ,@level1);
+@oyhm5:lighten( spin(@oym,@spin5) ,@level0);
+@oyhm6:darken( spin(@oym,@spin6) ,@level1);
+@oyhm7:darken( spin(@oym,@spin7) ,@level2);
+@oyhm8:darken( spin(@oym,@spin8) ,@level3);
+@oyhm9:darken( spin(@oym,@spin9) ,@level4);
+
+@oyhr1:lighten( spin(@oyr,@spin1) ,@level4);
+@oyhr2:lighten( spin(@oyr,@spin2) ,@level3);
+@oyhr3:lighten( spin(@oyr,@spin3) ,@level2);
+@oyhr4:lighten( spin(@oyr,@spin4) ,@level1);
+@oyhr5:lighten( spin(@oyr,@spin5) ,@level0);
+@oyhr6:darken( spin(@oyr,@spin6) ,@level1);
+@oyhr7:darken( spin(@oyr,@spin7) ,@level2);
+@oyhr8:darken( spin(@oyr,@spin8) ,@level3);
+@oyhr9:darken( spin(@oyr,@spin9) ,@level4);
+
+@oyhd1:lighten( spin(@oyd,@spin1) ,@level4);
+@oyhd2:lighten( spin(@oyd,@spin2) ,@level3);
+@oyhd3:lighten( spin(@oyd,@spin3) ,@level2);
+@oyhd4:lighten( spin(@oyd,@spin4) ,@level1);
+@oyhd5:lighten( spin(@oyd,@spin5) ,@level0);
+@oyhd6:darken( spin(@oyd,@spin6) ,@level1);
+@oyhd7:darken( spin(@oyd,@spin7) ,@level2);
+@oyhd8:darken( spin(@oyd,@spin8) ,@level3);
+@oyhd9:darken( spin(@oyd,@spin9) ,@level4);
+
+@yehl1:lighten( spin(@yel,@spin1) ,@level4);
+@yehl2:lighten( spin(@yel,@spin2) ,@level3);
+@yehl3:lighten( spin(@yel,@spin3) ,@level2);
+@yehl4:lighten( spin(@yel,@spin4) ,@level1);
+@yehl5:lighten( spin(@yel,@spin5) ,@level0);
+@yehl6:darken( spin(@yel,@spin6) ,@level1);
+@yehl7:darken( spin(@yel,@spin7) ,@level2);
+@yehl8:darken( spin(@yel,@spin8) ,@level3);
+@yehl9:darken( spin(@yel,@spin9) ,@level4);
+
+@yehm1:lighten( spin(@yem,@spin1) ,@level4);
+@yehm2:lighten( spin(@yem,@spin2) ,@level3);
+@yehm3:lighten( spin(@yem,@spin3) ,@level2);
+@yehm4:lighten( spin(@yem,@spin4) ,@level1);
+@yehm5:lighten( spin(@yem,@spin5) ,@level0);
+@yehm6:darken( spin(@yem,@spin6) ,@level1);
+@yehm7:darken( spin(@yem,@spin7) ,@level2);
+@yehm8:darken( spin(@yem,@spin8) ,@level3);
+@yehm9:darken( spin(@yem,@spin9) ,@level4);
+
+@yehr1:lighten( spin(@yer,@spin1) ,@level4);
+@yehr2:lighten( spin(@yer,@spin2) ,@level3);
+@yehr3:lighten( spin(@yer,@spin3) ,@level2);
+@yehr4:lighten( spin(@yer,@spin4) ,@level1);
+@yehr5:lighten( spin(@yer,@spin5) ,@level0);
+@yehr6:darken( spin(@yer,@spin6) ,@level1);
+@yehr7:darken( spin(@yer,@spin7) ,@level2);
+@yehr8:darken( spin(@yer,@spin8) ,@level3);
+@yehr9:darken( spin(@yer,@spin9) ,@level4);
+
+@yehd1:lighten( spin(@yed,@spin1) ,@level4);
+@yehd2:lighten( spin(@yed,@spin2) ,@level3);
+@yehd3:lighten( spin(@yed,@spin3) ,@level2);
+@yehd4:lighten( spin(@yed,@spin4) ,@level1);
+@yehd5:lighten( spin(@yed,@spin5) ,@level0);
+@yehd6:darken( spin(@yed,@spin6) ,@level1);
+@yehd7:darken( spin(@yed,@spin7) ,@level2);
+@yehd8:darken( spin(@yed,@spin8) ,@level3);
+@yehd9:darken( spin(@yed,@spin9) ,@level4);
+
+@ychl1:lighten( spin(@ycl,@spin1) ,@level4);
+@ychl2:lighten( spin(@ycl,@spin2) ,@level3);
+@ychl3:lighten( spin(@ycl,@spin3) ,@level2);
+@ychl4:lighten( spin(@ycl,@spin4) ,@level1);
+@ychl5:lighten( spin(@ycl,@spin5) ,@level0);
+@ychl6:darken( spin(@ycl,@spin6) ,@level1);
+@ychl7:darken( spin(@ycl,@spin7) ,@level2);
+@ychl8:darken( spin(@ycl,@spin8) ,@level3);
+@ychl9:darken( spin(@ycl,@spin9) ,@level4);
+
+@ychm1:lighten( spin(@ycm,@spin1) ,@level4);
+@ychm2:lighten( spin(@ycm,@spin2) ,@level3);
+@ychm3:lighten( spin(@ycm,@spin3) ,@level2);
+@ychm4:lighten( spin(@ycm,@spin4) ,@level1);
+@ychm5:lighten( spin(@ycm,@spin5) ,@level0);
+@ychm6:darken( spin(@ycm,@spin6) ,@level1);
+@ychm7:darken( spin(@ycm,@spin7) ,@level2);
+@ychm8:darken( spin(@ycm,@spin8) ,@level3);
+@ychm9:darken( spin(@ycm,@spin9) ,@level4);
+
+@ychr1:lighten( spin(@ycr,@spin1) ,@level4);
+@ychr2:lighten( spin(@ycr,@spin2) ,@level3);
+@ychr3:lighten( spin(@ycr,@spin3) ,@level2);
+@ychr4:lighten( spin(@ycr,@spin4) ,@level1);
+@ychr5:lighten( spin(@ycr,@spin5) ,@level0);
+@ychr6:darken( spin(@ycr,@spin6) ,@level1);
+@ychr7:darken( spin(@ycr,@spin7) ,@level2);
+@ychr8:darken( spin(@ycr,@spin8) ,@level3);
+@ychr9:darken( spin(@ycr,@spin9) ,@level4);
+
+@ychd1:lighten( spin(@ycd,@spin1) ,@level4);
+@ychd2:lighten( spin(@ycd,@spin2) ,@level3);
+@ychd3:lighten( spin(@ycd,@spin3) ,@level2);
+@ychd4:lighten( spin(@ycd,@spin4) ,@level1);
+@ychd5:lighten( spin(@ycd,@spin5) ,@level0);
+@ychd6:darken( spin(@ycd,@spin6) ,@level1);
+@ychd7:darken( spin(@ycd,@spin7) ,@level2);
+@ychd8:darken( spin(@ycd,@spin8) ,@level3);
+@ychd9:darken( spin(@ycd,@spin9) ,@level4);
+
+@chhl1:lighten( spin(@chl,@spin1) ,@level4);
+@chhl2:lighten( spin(@chl,@spin2) ,@level3);
+@chhl3:lighten( spin(@chl,@spin3) ,@level2);
+@chhl4:lighten( spin(@chl,@spin4) ,@level1);
+@chhl5:lighten( spin(@chl,@spin5) ,@level0);
+@chhl6:darken( spin(@chl,@spin6) ,@level1);
+@chhl7:darken( spin(@chl,@spin7) ,@level2);
+@chhl8:darken( spin(@chl,@spin8) ,@level3);
+@chhl9:darken( spin(@chl,@spin9) ,@level4);
+
+@chhm1:lighten( spin(@chm,@spin1) ,@level4);
+@chhm2:lighten( spin(@chm,@spin2) ,@level3);
+@chhm3:lighten( spin(@chm,@spin3) ,@level2);
+@chhm4:lighten( spin(@chm,@spin4) ,@level1);
+@chhm5:lighten( spin(@chm,@spin5) ,@level0);
+@chhm6:darken( spin(@chm,@spin6) ,@level1);
+@chhm7:darken( spin(@chm,@spin7) ,@level2);
+@chhm8:darken( spin(@chm,@spin8) ,@level3);
+@chhm9:darken( spin(@chm,@spin9) ,@level4);
+
+@chhr1:lighten( spin(@chr,@spin1) ,@level4);
+@chhr2:lighten( spin(@chr,@spin2) ,@level3);
+@chhr3:lighten( spin(@chr,@spin3) ,@level2);
+@chhr4:lighten( spin(@chr,@spin4) ,@level1);
+@chhr5:lighten( spin(@chr,@spin5) ,@level0);
+@chhr6:darken( spin(@chr,@spin6) ,@level1);
+@chhr7:darken( spin(@chr,@spin7) ,@level2);
+@chhr8:darken( spin(@chr,@spin8) ,@level3);
+@chhr9:darken( spin(@chr,@spin9) ,@level4);
+
+@chhd1:lighten( spin(@chd,@spin1) ,@level4);
+@chhd2:lighten( spin(@chd,@spin2) ,@level3);
+@chhd3:lighten( spin(@chd,@spin3) ,@level2);
+@chhd4:lighten( spin(@chd,@spin4) ,@level1);
+@chhd5:lighten( spin(@chd,@spin5) ,@level0);
+@chhd6:darken( spin(@chd,@spin6) ,@level1);
+@chhd7:darken( spin(@chd,@spin7) ,@level2);
+@chhd8:darken( spin(@chd,@spin8) ,@level3);
+@chhd9:darken( spin(@chd,@spin9) ,@level4);
+
+@cghl1:lighten( spin(@cgl,@spin1) ,@level4);
+@cghl2:lighten( spin(@cgl,@spin2) ,@level3);
+@cghl3:lighten( spin(@cgl,@spin3) ,@level2);
+@cghl4:lighten( spin(@cgl,@spin4) ,@level1);
+@cghl5:lighten( spin(@cgl,@spin5) ,@level0);
+@cghl6:darken( spin(@cgl,@spin6) ,@level1);
+@cghl7:darken( spin(@cgl,@spin7) ,@level2);
+@cghl8:darken( spin(@cgl,@spin8) ,@level3);
+@cghl9:darken( spin(@cgl,@spin9) ,@level4);
+
+@cghm1:lighten( spin(@cgm,@spin1) ,@level4);
+@cghm2:lighten( spin(@cgm,@spin2) ,@level3);
+@cghm3:lighten( spin(@cgm,@spin3) ,@level2);
+@cghm4:lighten( spin(@cgm,@spin4) ,@level1);
+@cghm5:lighten( spin(@cgm,@spin5) ,@level0);
+@cghm6:darken( spin(@cgm,@spin6) ,@level1);
+@cghm7:darken( spin(@cgm,@spin7) ,@level2);
+@cghm8:darken( spin(@cgm,@spin8) ,@level3);
+@cghm9:darken( spin(@cgm,@spin9) ,@level4);
+
+@cghr1:lighten( spin(@cgr,@spin1) ,@level4);
+@cghr2:lighten( spin(@cgr,@spin2) ,@level3);
+@cghr3:lighten( spin(@cgr,@spin3) ,@level2);
+@cghr4:lighten( spin(@cgr,@spin4) ,@level1);
+@cghr5:lighten( spin(@cgr,@spin5) ,@level0);
+@cghr6:darken( spin(@cgr,@spin6) ,@level1);
+@cghr7:darken( spin(@cgr,@spin7) ,@level2);
+@cghr8:darken( spin(@cgr,@spin8) ,@level3);
+@cghr9:darken( spin(@cgr,@spin9) ,@level4);
+
+@cghd1:lighten( spin(@cgd,@spin1) ,@level4);
+@cghd2:lighten( spin(@cgd,@spin2) ,@level3);
+@cghd3:lighten( spin(@cgd,@spin3) ,@level2);
+@cghd4:lighten( spin(@cgd,@spin4) ,@level1);
+@cghd5:lighten( spin(@cgd,@spin5) ,@level0);
+@cghd6:darken( spin(@cgd,@spin6) ,@level1);
+@cghd7:darken( spin(@cgd,@spin7) ,@level2);
+@cghd8:darken( spin(@cgd,@spin8) ,@level3);
+@cghd9:darken( spin(@cgd,@spin9) ,@level4);
+
+@grhl1:lighten( spin(@grl,@spin1) ,@level4);
+@grhl2:lighten( spin(@grl,@spin2) ,@level3);
+@grhl3:lighten( spin(@grl,@spin3) ,@level2);
+@grhl4:lighten( spin(@grl,@spin4) ,@level1);
+@grhl5:lighten( spin(@grl,@spin5) ,@level0);
+@grhl6:darken( spin(@grl,@spin6) ,@level1);
+@grhl7:darken( spin(@grl,@spin7) ,@level2);
+@grhl8:darken( spin(@grl,@spin8) ,@level3);
+@grhl9:darken( spin(@grl,@spin9) ,@level4);
+
+@grhm1:lighten( spin(@grm,@spin1) ,@level4);
+@grhm2:lighten( spin(@grm,@spin2) ,@level3);
+@grhm3:lighten( spin(@grm,@spin3) ,@level2);
+@grhm4:lighten( spin(@grm,@spin4) ,@level1);
+@grhm5:lighten( spin(@grm,@spin5) ,@level0);
+@grhm6:darken( spin(@grm,@spin6) ,@level1);
+@grhm7:darken( spin(@grm,@spin7) ,@level2);
+@grhm8:darken( spin(@grm,@spin8) ,@level3);
+@grhm9:darken( spin(@grm,@spin9) ,@level4);
+
+@grhr1:lighten( spin(@grr,@spin1) ,@level4);
+@grhr2:lighten( spin(@grr,@spin2) ,@level3);
+@grhr3:lighten( spin(@grr,@spin3) ,@level2);
+@grhr4:lighten( spin(@grr,@spin4) ,@level1);
+@grhr5:lighten( spin(@grr,@spin5) ,@level0);
+@grhr6:darken( spin(@grr,@spin6) ,@level1);
+@grhr7:darken( spin(@grr,@spin7) ,@level2);
+@grhr8:darken( spin(@grr,@spin8) ,@level3);
+@grhr9:darken( spin(@grr,@spin9) ,@level4);
+
+@grhd1:lighten( spin(@grd,@spin1) ,@level4);
+@grhd2:lighten( spin(@grd,@spin2) ,@level3);
+@grhd3:lighten( spin(@grd,@spin3) ,@level2);
+@grhd4:lighten( spin(@grd,@spin4) ,@level1);
+@grhd5:lighten( spin(@grd,@spin5) ,@level0);
+@grhd6:darken( spin(@grd,@spin6) ,@level1);
+@grhd7:darken( spin(@grd,@spin7) ,@level2);
+@grhd8:darken( spin(@grd,@spin8) ,@level3);
+@grhd9:darken( spin(@grd,@spin9) ,@level4);
+
+@gahl1:lighten( spin(@gal,@spin1) ,@level4);
+@gahl2:lighten( spin(@gal,@spin2) ,@level3);
+@gahl3:lighten( spin(@gal,@spin3) ,@level2);
+@gahl4:lighten( spin(@gal,@spin4) ,@level1);
+@gahl5:lighten( spin(@gal,@spin5) ,@level0);
+@gahl6:darken( spin(@gal,@spin6) ,@level1);
+@gahl7:darken( spin(@gal,@spin7) ,@level2);
+@gahl8:darken( spin(@gal,@spin8) ,@level3);
+@gahl9:darken( spin(@gal,@spin9) ,@level4);
+
+@gahm1:lighten( spin(@gam,@spin1) ,@level4);
+@gahm2:lighten( spin(@gam,@spin2) ,@level3);
+@gahm3:lighten( spin(@gam,@spin3) ,@level2);
+@gahm4:lighten( spin(@gam,@spin4) ,@level1);
+@gahm5:lighten( spin(@gam,@spin5) ,@level0);
+@gahm6:darken( spin(@gam,@spin6) ,@level1);
+@gahm7:darken( spin(@gam,@spin7) ,@level2);
+@gahm8:darken( spin(@gam,@spin8) ,@level3);
+@gahm9:darken( spin(@gam,@spin9) ,@level4);
+
+@gahr1:lighten( spin(@gar,@spin1) ,@level4);
+@gahr2:lighten( spin(@gar,@spin2) ,@level3);
+@gahr3:lighten( spin(@gar,@spin3) ,@level2);
+@gahr4:lighten( spin(@gar,@spin4) ,@level1);
+@gahr5:lighten( spin(@gar,@spin5) ,@level0);
+@gahr6:darken( spin(@gar,@spin6) ,@level1);
+@gahr7:darken( spin(@gar,@spin7) ,@level2);
+@gahr8:darken( spin(@gar,@spin8) ,@level3);
+@gahr9:darken( spin(@gar,@spin9) ,@level4);
+
+@gahd1:lighten( spin(@gad,@spin1) ,@level4);
+@gahd2:lighten( spin(@gad,@spin2) ,@level3);
+@gahd3:lighten( spin(@gad,@spin3) ,@level2);
+@gahd4:lighten( spin(@gad,@spin4) ,@level1);
+@gahd5:lighten( spin(@gad,@spin5) ,@level0);
+@gahd6:darken( spin(@gad,@spin6) ,@level1);
+@gahd7:darken( spin(@gad,@spin7) ,@level2);
+@gahd8:darken( spin(@gad,@spin8) ,@level3);
+@gahd9:darken( spin(@gad,@spin9) ,@level4);
+
+@aqhl1:lighten( spin(@aql,@spin1) ,@level4);
+@aqhl2:lighten( spin(@aql,@spin2) ,@level3);
+@aqhl3:lighten( spin(@aql,@spin3) ,@level2);
+@aqhl4:lighten( spin(@aql,@spin4) ,@level1);
+@aqhl5:lighten( spin(@aql,@spin5) ,@level0);
+@aqhl6:darken( spin(@aql,@spin6) ,@level1);
+@aqhl7:darken( spin(@aql,@spin7) ,@level2);
+@aqhl8:darken( spin(@aql,@spin8) ,@level3);
+@aqhl9:darken( spin(@aql,@spin9) ,@level4);
+
+@aqhm1:lighten( spin(@aqm,@spin1) ,@level4);
+@aqhm2:lighten( spin(@aqm,@spin2) ,@level3);
+@aqhm3:lighten( spin(@aqm,@spin3) ,@level2);
+@aqhm4:lighten( spin(@aqm,@spin4) ,@level1);
+@aqhm5:lighten( spin(@aqm,@spin5) ,@level0);
+@aqhm6:darken( spin(@aqm,@spin6) ,@level1);
+@aqhm7:darken( spin(@aqm,@spin7) ,@level2);
+@aqhm8:darken( spin(@aqm,@spin8) ,@level3);
+@aqhm9:darken( spin(@aqm,@spin9) ,@level4);
+
+@aqhr1:lighten( spin(@aqr,@spin1) ,@level4);
+@aqhr2:lighten( spin(@aqr,@spin2) ,@level3);
+@aqhr3:lighten( spin(@aqr,@spin3) ,@level2);
+@aqhr4:lighten( spin(@aqr,@spin4) ,@level1);
+@aqhr5:lighten( spin(@aqr,@spin5) ,@level0);
+@aqhr6:darken( spin(@aqr,@spin6) ,@level1);
+@aqhr7:darken( spin(@aqr,@spin7) ,@level2);
+@aqhr8:darken( spin(@aqr,@spin8) ,@level3);
+@aqhr9:darken( spin(@aqr,@spin9) ,@level4);
+
+@aqhd1:lighten( spin(@aqd,@spin1) ,@level4);
+@aqhd2:lighten( spin(@aqd,@spin2) ,@level3);
+@aqhd3:lighten( spin(@aqd,@spin3) ,@level2);
+@aqhd4:lighten( spin(@aqd,@spin4) ,@level1);
+@aqhd5:lighten( spin(@aqd,@spin5) ,@level0);
+@aqhd6:darken( spin(@aqd,@spin6) ,@level1);
+@aqhd7:darken( spin(@aqd,@spin7) ,@level2);
+@aqhd8:darken( spin(@aqd,@spin8) ,@level3);
+@aqhd9:darken( spin(@aqd,@spin9) ,@level4);
+
+@achl1:lighten( spin(@acl,@spin1) ,@level4);
+@achl2:lighten( spin(@acl,@spin2) ,@level3);
+@achl3:lighten( spin(@acl,@spin3) ,@level2);
+@achl4:lighten( spin(@acl,@spin4) ,@level1);
+@achl5:lighten( spin(@acl,@spin5) ,@level0);
+@achl6:darken( spin(@acl,@spin6) ,@level1);
+@achl7:darken( spin(@acl,@spin7) ,@level2);
+@achl8:darken( spin(@acl,@spin8) ,@level3);
+@achl9:darken( spin(@acl,@spin9) ,@level4);
+
+@achm1:lighten( spin(@acm,@spin1) ,@level4);
+@achm2:lighten( spin(@acm,@spin2) ,@level3);
+@achm3:lighten( spin(@acm,@spin3) ,@level2);
+@achm4:lighten( spin(@acm,@spin4) ,@level1);
+@achm5:lighten( spin(@acm,@spin5) ,@level0);
+@achm6:darken( spin(@acm,@spin6) ,@level1);
+@achm7:darken( spin(@acm,@spin7) ,@level2);
+@achm8:darken( spin(@acm,@spin8) ,@level3);
+@achm9:darken( spin(@acm,@spin9) ,@level4);
+
+@achr1:lighten( spin(@acr,@spin1) ,@level4);
+@achr2:lighten( spin(@acr,@spin2) ,@level3);
+@achr3:lighten( spin(@acr,@spin3) ,@level2);
+@achr4:lighten( spin(@acr,@spin4) ,@level1);
+@achr5:lighten( spin(@acr,@spin5) ,@level0);
+@achr6:darken( spin(@acr,@spin6) ,@level1);
+@achr7:darken( spin(@acr,@spin7) ,@level2);
+@achr8:darken( spin(@acr,@spin8) ,@level3);
+@achr9:darken( spin(@acr,@spin9) ,@level4);
+
+@achd1:lighten( spin(@acd,@spin1) ,@level4);
+@achd2:lighten( spin(@acd,@spin2) ,@level3);
+@achd3:lighten( spin(@acd,@spin3) ,@level2);
+@achd4:lighten( spin(@acd,@spin4) ,@level1);
+@achd5:lighten( spin(@acd,@spin5) ,@level0);
+@achd6:darken( spin(@acd,@spin6) ,@level1);
+@achd7:darken( spin(@acd,@spin7) ,@level2);
+@achd8:darken( spin(@acd,@spin8) ,@level3);
+@achd9:darken( spin(@acd,@spin9) ,@level4);
+
+@cyhl1:lighten( spin(@cyl,@spin1) ,@level4);
+@cyhl2:lighten( spin(@cyl,@spin2) ,@level3);
+@cyhl3:lighten( spin(@cyl,@spin3) ,@level2);
+@cyhl4:lighten( spin(@cyl,@spin4) ,@level1);
+@cyhl5:lighten( spin(@cyl,@spin5) ,@level0);
+@cyhl6:darken( spin(@cyl,@spin6) ,@level1);
+@cyhl7:darken( spin(@cyl,@spin7) ,@level2);
+@cyhl8:darken( spin(@cyl,@spin8) ,@level3);
+@cyhl9:darken( spin(@cyl,@spin9) ,@level4);
+
+@cyhm1:lighten( spin(@cym,@spin1) ,@level4);
+@cyhm2:lighten( spin(@cym,@spin2) ,@level3);
+@cyhm3:lighten( spin(@cym,@spin3) ,@level2);
+@cyhm4:lighten( spin(@cym,@spin4) ,@level1);
+@cyhm5:lighten( spin(@cym,@spin5) ,@level0);
+@cyhm6:darken( spin(@cym,@spin6) ,@level1);
+@cyhm7:darken( spin(@cym,@spin7) ,@level2);
+@cyhm8:darken( spin(@cym,@spin8) ,@level3);
+@cyhm9:darken( spin(@cym,@spin9) ,@level4);
+
+@cyhr1:lighten( spin(@cyr,@spin1) ,@level4);
+@cyhr2:lighten( spin(@cyr,@spin2) ,@level3);
+@cyhr3:lighten( spin(@cyr,@spin3) ,@level2);
+@cyhr4:lighten( spin(@cyr,@spin4) ,@level1);
+@cyhr5:lighten( spin(@cyr,@spin5) ,@level0);
+@cyhr6:darken( spin(@cyr,@spin6) ,@level1);
+@cyhr7:darken( spin(@cyr,@spin7) ,@level2);
+@cyhr8:darken( spin(@cyr,@spin8) ,@level3);
+@cyhr9:darken( spin(@cyr,@spin9) ,@level4);
+
+@cyhd1:lighten( spin(@cyd,@spin1) ,@level4);
+@cyhd2:lighten( spin(@cyd,@spin2) ,@level3);
+@cyhd3:lighten( spin(@cyd,@spin3) ,@level2);
+@cyhd4:lighten( spin(@cyd,@spin4) ,@level1);
+@cyhd5:lighten( spin(@cyd,@spin5) ,@level0);
+@cyhd6:darken( spin(@cyd,@spin6) ,@level1);
+@cyhd7:darken( spin(@cyd,@spin7) ,@level2);
+@cyhd8:darken( spin(@cyd,@spin8) ,@level3);
+@cyhd9:darken( spin(@cyd,@spin9) ,@level4);
+
+@cbhl1:lighten( spin(@cbl,@spin1) ,@level4);
+@cbhl2:lighten( spin(@cbl,@spin2) ,@level3);
+@cbhl3:lighten( spin(@cbl,@spin3) ,@level2);
+@cbhl4:lighten( spin(@cbl,@spin4) ,@level1);
+@cbhl5:lighten( spin(@cbl,@spin5) ,@level0);
+@cbhl6:darken( spin(@cbl,@spin6) ,@level1);
+@cbhl7:darken( spin(@cbl,@spin7) ,@level2);
+@cbhl8:darken( spin(@cbl,@spin8) ,@level3);
+@cbhl9:darken( spin(@cbl,@spin9) ,@level4);
+
+@cbhm1:lighten( spin(@cbm,@spin1) ,@level4);
+@cbhm2:lighten( spin(@cbm,@spin2) ,@level3);
+@cbhm3:lighten( spin(@cbm,@spin3) ,@level2);
+@cbhm4:lighten( spin(@cbm,@spin4) ,@level1);
+@cbhm5:lighten( spin(@cbm,@spin5) ,@level0);
+@cbhm6:darken( spin(@cbm,@spin6) ,@level1);
+@cbhm7:darken( spin(@cbm,@spin7) ,@level2);
+@cbhm8:darken( spin(@cbm,@spin8) ,@level3);
+@cbhm9:darken( spin(@cbm,@spin9) ,@level4);
+
+@cbhr1:lighten( spin(@cbr,@spin1) ,@level4);
+@cbhr2:lighten( spin(@cbr,@spin2) ,@level3);
+@cbhr3:lighten( spin(@cbr,@spin3) ,@level2);
+@cbhr4:lighten( spin(@cbr,@spin4) ,@level1);
+@cbhr5:lighten( spin(@cbr,@spin5) ,@level0);
+@cbhr6:darken( spin(@cbr,@spin6) ,@level1);
+@cbhr7:darken( spin(@cbr,@spin7) ,@level2);
+@cbhr8:darken( spin(@cbr,@spin8) ,@level3);
+@cbhr9:darken( spin(@cbr,@spin9) ,@level4);
+
+@cbhd1:lighten( spin(@cbd,@spin1) ,@level4);
+@cbhd2:lighten( spin(@cbd,@spin2) ,@level3);
+@cbhd3:lighten( spin(@cbd,@spin3) ,@level2);
+@cbhd4:lighten( spin(@cbd,@spin4) ,@level1);
+@cbhd5:lighten( spin(@cbd,@spin5) ,@level0);
+@cbhd6:darken( spin(@cbd,@spin6) ,@level1);
+@cbhd7:darken( spin(@cbd,@spin7) ,@level2);
+@cbhd8:darken( spin(@cbd,@spin8) ,@level3);
+@cbhd9:darken( spin(@cbd,@spin9) ,@level4);
+
+@blhl1:lighten( spin(@bll,@spin1) ,@level4);
+@blhl2:lighten( spin(@bll,@spin2) ,@level3);
+@blhl3:lighten( spin(@bll,@spin3) ,@level2);
+@blhl4:lighten( spin(@bll,@spin4) ,@level1);
+@blhl5:lighten( spin(@bll,@spin5) ,@level0);
+@blhl6:darken( spin(@bll,@spin6) ,@level1);
+@blhl7:darken( spin(@bll,@spin7) ,@level2);
+@blhl8:darken( spin(@bll,@spin8) ,@level3);
+@blhl9:darken( spin(@bll,@spin9) ,@level4);
+
+@blhm1:lighten( spin(@blm,@spin1) ,@level4);
+@blhm2:lighten( spin(@blm,@spin2) ,@level3);
+@blhm3:lighten( spin(@blm,@spin3) ,@level2);
+@blhm4:lighten( spin(@blm,@spin4) ,@level1);
+@blhm5:lighten( spin(@blm,@spin5) ,@level0);
+@blhm6:darken( spin(@blm,@spin6) ,@level1);
+@blhm7:darken( spin(@blm,@spin7) ,@level2);
+@blhm8:darken( spin(@blm,@spin8) ,@level3);
+@blhm9:darken( spin(@blm,@spin9) ,@level4);
+
+@blhr1:lighten( spin(@blr,@spin1) ,@level4);
+@blhr2:lighten( spin(@blr,@spin2) ,@level3);
+@blhr3:lighten( spin(@blr,@spin3) ,@level2);
+@blhr4:lighten( spin(@blr,@spin4) ,@level1);
+@blhr5:lighten( spin(@blr,@spin5) ,@level0);
+@blhr6:darken( spin(@blr,@spin6) ,@level1);
+@blhr7:darken( spin(@blr,@spin7) ,@level2);
+@blhr8:darken( spin(@blr,@spin8) ,@level3);
+@blhr9:darken( spin(@blr,@spin9) ,@level4);
+
+@blhd1:lighten( spin(@bld,@spin1) ,@level4);
+@blhd2:lighten( spin(@bld,@spin2) ,@level3);
+@blhd3:lighten( spin(@bld,@spin3) ,@level2);
+@blhd4:lighten( spin(@bld,@spin4) ,@level1);
+@blhd5:lighten( spin(@bld,@spin5) ,@level0);
+@blhd6:darken( spin(@bld,@spin6) ,@level1);
+@blhd7:darken( spin(@bld,@spin7) ,@level2);
+@blhd8:darken( spin(@bld,@spin8) ,@level3);
+@blhd9:darken( spin(@bld,@spin9) ,@level4);
+
+@bihl1:lighten( spin(@bil,@spin1) ,@level4);
+@bihl2:lighten( spin(@bil,@spin2) ,@level3);
+@bihl3:lighten( spin(@bil,@spin3) ,@level2);
+@bihl4:lighten( spin(@bil,@spin4) ,@level1);
+@bihl5:lighten( spin(@bil,@spin5) ,@level0);
+@bihl6:darken( spin(@bil,@spin6) ,@level1);
+@bihl7:darken( spin(@bil,@spin7) ,@level2);
+@bihl8:darken( spin(@bil,@spin8) ,@level3);
+@bihl9:darken( spin(@bil,@spin9) ,@level4);
+
+@bihm1:lighten( spin(@bim,@spin1) ,@level4);
+@bihm2:lighten( spin(@bim,@spin2) ,@level3);
+@bihm3:lighten( spin(@bim,@spin3) ,@level2);
+@bihm4:lighten( spin(@bim,@spin4) ,@level1);
+@bihm5:lighten( spin(@bim,@spin5) ,@level0);
+@bihm6:darken( spin(@bim,@spin6) ,@level1);
+@bihm7:darken( spin(@bim,@spin7) ,@level2);
+@bihm8:darken( spin(@bim,@spin8) ,@level3);
+@bihm9:darken( spin(@bim,@spin9) ,@level4);
+
+@bihr1:lighten( spin(@bir,@spin1) ,@level4);
+@bihr2:lighten( spin(@bir,@spin2) ,@level3);
+@bihr3:lighten( spin(@bir,@spin3) ,@level2);
+@bihr4:lighten( spin(@bir,@spin4) ,@level1);
+@bihr5:lighten( spin(@bir,@spin5) ,@level0);
+@bihr6:darken( spin(@bir,@spin6) ,@level1);
+@bihr7:darken( spin(@bir,@spin7) ,@level2);
+@bihr8:darken( spin(@bir,@spin8) ,@level3);
+@bihr9:darken( spin(@bir,@spin9) ,@level4);
+
+@bihd1:lighten( spin(@bid,@spin1) ,@level4);
+@bihd2:lighten( spin(@bid,@spin2) ,@level3);
+@bihd3:lighten( spin(@bid,@spin3) ,@level2);
+@bihd4:lighten( spin(@bid,@spin4) ,@level1);
+@bihd5:lighten( spin(@bid,@spin5) ,@level0);
+@bihd6:darken( spin(@bid,@spin6) ,@level1);
+@bihd7:darken( spin(@bid,@spin7) ,@level2);
+@bihd8:darken( spin(@bid,@spin8) ,@level3);
+@bihd9:darken( spin(@bid,@spin9) ,@level4);
+
+@inhl1:lighten( spin(@inl,@spin1) ,@level4);
+@inhl2:lighten( spin(@inl,@spin2) ,@level3);
+@inhl3:lighten( spin(@inl,@spin3) ,@level2);
+@inhl4:lighten( spin(@inl,@spin4) ,@level1);
+@inhl5:lighten( spin(@inl,@spin5) ,@level0);
+@inhl6:darken( spin(@inl,@spin6) ,@level1);
+@inhl7:darken( spin(@inl,@spin7) ,@level2);
+@inhl8:darken( spin(@inl,@spin8) ,@level3);
+@inhl9:darken( spin(@inl,@spin9) ,@level4);
+
+@inhm1:lighten( spin(@inm,@spin1) ,@level4);
+@inhm2:lighten( spin(@inm,@spin2) ,@level3);
+@inhm3:lighten( spin(@inm,@spin3) ,@level2);
+@inhm4:lighten( spin(@inm,@spin4) ,@level1);
+@inhm5:lighten( spin(@inm,@spin5) ,@level0);
+@inhm6:darken( spin(@inm,@spin6) ,@level1);
+@inhm7:darken( spin(@inm,@spin7) ,@level2);
+@inhm8:darken( spin(@inm,@spin8) ,@level3);
+@inhm9:darken( spin(@inm,@spin9) ,@level4);
+
+@inhr1:lighten( spin(@inr,@spin1) ,@level4);
+@inhr2:lighten( spin(@inr,@spin2) ,@level3);
+@inhr3:lighten( spin(@inr,@spin3) ,@level2);
+@inhr4:lighten( spin(@inr,@spin4) ,@level1);
+@inhr5:lighten( spin(@inr,@spin5) ,@level0);
+@inhr6:darken( spin(@inr,@spin6) ,@level1);
+@inhr7:darken( spin(@inr,@spin7) ,@level2);
+@inhr8:darken( spin(@inr,@spin8) ,@level3);
+@inhr9:darken( spin(@inr,@spin9) ,@level4);
+
+@inhd1:lighten( spin(@ind,@spin1) ,@level4);
+@inhd2:lighten( spin(@ind,@spin2) ,@level3);
+@inhd3:lighten( spin(@ind,@spin3) ,@level2);
+@inhd4:lighten( spin(@ind,@spin4) ,@level1);
+@inhd5:lighten( spin(@ind,@spin5) ,@level0);
+@inhd6:darken( spin(@ind,@spin6) ,@level1);
+@inhd7:darken( spin(@ind,@spin7) ,@level2);
+@inhd8:darken( spin(@ind,@spin8) ,@level3);
+@inhd9:darken( spin(@ind,@spin9) ,@level4);
+
+@iphl1:lighten( spin(@ipl,@spin1) ,@level4);
+@iphl2:lighten( spin(@ipl,@spin2) ,@level3);
+@iphl3:lighten( spin(@ipl,@spin3) ,@level2);
+@iphl4:lighten( spin(@ipl,@spin4) ,@level1);
+@iphl5:lighten( spin(@ipl,@spin5) ,@level0);
+@iphl6:darken( spin(@ipl,@spin6) ,@level1);
+@iphl7:darken( spin(@ipl,@spin7) ,@level2);
+@iphl8:darken( spin(@ipl,@spin8) ,@level3);
+@iphl9:darken( spin(@ipl,@spin9) ,@level4);
+
+@iphm1:lighten( spin(@ipm,@spin1) ,@level4);
+@iphm2:lighten( spin(@ipm,@spin2) ,@level3);
+@iphm3:lighten( spin(@ipm,@spin3) ,@level2);
+@iphm4:lighten( spin(@ipm,@spin4) ,@level1);
+@iphm5:lighten( spin(@ipm,@spin5) ,@level0);
+@iphm6:darken( spin(@ipm,@spin6) ,@level1);
+@iphm7:darken( spin(@ipm,@spin7) ,@level2);
+@iphm8:darken( spin(@ipm,@spin8) ,@level3);
+@iphm9:darken( spin(@ipm,@spin9) ,@level4);
+
+@iphr1:lighten( spin(@ipr,@spin1) ,@level4);
+@iphr2:lighten( spin(@ipr,@spin2) ,@level3);
+@iphr3:lighten( spin(@ipr,@spin3) ,@level2);
+@iphr4:lighten( spin(@ipr,@spin4) ,@level1);
+@iphr5:lighten( spin(@ipr,@spin5) ,@level0);
+@iphr6:darken( spin(@ipr,@spin6) ,@level1);
+@iphr7:darken( spin(@ipr,@spin7) ,@level2);
+@iphr8:darken( spin(@ipr,@spin8) ,@level3);
+@iphr9:darken( spin(@ipr,@spin9) ,@level4);
+
+@iphd1:lighten( spin(@ipd,@spin1) ,@level4);
+@iphd2:lighten( spin(@ipd,@spin2) ,@level3);
+@iphd3:lighten( spin(@ipd,@spin3) ,@level2);
+@iphd4:lighten( spin(@ipd,@spin4) ,@level1);
+@iphd5:lighten( spin(@ipd,@spin5) ,@level0);
+@iphd6:darken( spin(@ipd,@spin6) ,@level1);
+@iphd7:darken( spin(@ipd,@spin7) ,@level2);
+@iphd8:darken( spin(@ipd,@spin8) ,@level3);
+@iphd9:darken( spin(@ipd,@spin9) ,@level4);
+
+@puhl1:lighten( spin(@pul,@spin1) ,@level4);
+@puhl2:lighten( spin(@pul,@spin2) ,@level3);
+@puhl3:lighten( spin(@pul,@spin3) ,@level2);
+@puhl4:lighten( spin(@pul,@spin4) ,@level1);
+@puhl5:lighten( spin(@pul,@spin5) ,@level0);
+@puhl6:darken( spin(@pul,@spin6) ,@level1);
+@puhl7:darken( spin(@pul,@spin7) ,@level2);
+@puhl8:darken( spin(@pul,@spin8) ,@level3);
+@puhl9:darken( spin(@pul,@spin9) ,@level4);
+
+@puhm1:lighten( spin(@pum,@spin1) ,@level4);
+@puhm2:lighten( spin(@pum,@spin2) ,@level3);
+@puhm3:lighten( spin(@pum,@spin3) ,@level2);
+@puhm4:lighten( spin(@pum,@spin4) ,@level1);
+@puhm5:lighten( spin(@pum,@spin5) ,@level0);
+@puhm6:darken( spin(@pum,@spin6) ,@level1);
+@puhm7:darken( spin(@pum,@spin7) ,@level2);
+@puhm8:darken( spin(@pum,@spin8) ,@level3);
+@puhm9:darken( spin(@pum,@spin9) ,@level4);
+
+@puhr1:lighten( spin(@pur,@spin1) ,@level4);
+@puhr2:lighten( spin(@pur,@spin2) ,@level3);
+@puhr3:lighten( spin(@pur,@spin3) ,@level2);
+@puhr4:lighten( spin(@pur,@spin4) ,@level1);
+@puhr5:lighten( spin(@pur,@spin5) ,@level0);
+@puhr6:darken( spin(@pur,@spin6) ,@level1);
+@puhr7:darken( spin(@pur,@spin7) ,@level2);
+@puhr8:darken( spin(@pur,@spin8) ,@level3);
+@puhr9:darken( spin(@pur,@spin9) ,@level4);
+
+@puhd1:lighten( spin(@pud,@spin1) ,@level4);
+@puhd2:lighten( spin(@pud,@spin2) ,@level3);
+@puhd3:lighten( spin(@pud,@spin3) ,@level2);
+@puhd4:lighten( spin(@pud,@spin4) ,@level1);
+@puhd5:lighten( spin(@pud,@spin5) ,@level0);
+@puhd6:darken( spin(@pud,@spin6) ,@level1);
+@puhd7:darken( spin(@pud,@spin7) ,@level2);
+@puhd8:darken( spin(@pud,@spin8) ,@level3);
+@puhd9:darken( spin(@pud,@spin9) ,@level4);
+
+@pphl1:lighten( spin(@ppl,@spin1) ,@level4);
+@pphl2:lighten( spin(@ppl,@spin2) ,@level3);
+@pphl3:lighten( spin(@ppl,@spin3) ,@level2);
+@pphl4:lighten( spin(@ppl,@spin4) ,@level1);
+@pphl5:lighten( spin(@ppl,@spin5) ,@level0);
+@pphl6:darken( spin(@ppl,@spin6) ,@level1);
+@pphl7:darken( spin(@ppl,@spin7) ,@level2);
+@pphl8:darken( spin(@ppl,@spin8) ,@level3);
+@pphl9:darken( spin(@ppl,@spin9) ,@level4);
+
+@pphm1:lighten( spin(@ppm,@spin1) ,@level4);
+@pphm2:lighten( spin(@ppm,@spin2) ,@level3);
+@pphm3:lighten( spin(@ppm,@spin3) ,@level2);
+@pphm4:lighten( spin(@ppm,@spin4) ,@level1);
+@pphm5:lighten( spin(@ppm,@spin5) ,@level0);
+@pphm6:darken( spin(@ppm,@spin6) ,@level1);
+@pphm7:darken( spin(@ppm,@spin7) ,@level2);
+@pphm8:darken( spin(@ppm,@spin8) ,@level3);
+@pphm9:darken( spin(@ppm,@spin9) ,@level4);
+
+@pphr1:lighten( spin(@ppr,@spin1) ,@level4);
+@pphr2:lighten( spin(@ppr,@spin2) ,@level3);
+@pphr3:lighten( spin(@ppr,@spin3) ,@level2);
+@pphr4:lighten( spin(@ppr,@spin4) ,@level1);
+@pphr5:lighten( spin(@ppr,@spin5) ,@level0);
+@pphr6:darken( spin(@ppr,@spin6) ,@level1);
+@pphr7:darken( spin(@ppr,@spin7) ,@level2);
+@pphr8:darken( spin(@ppr,@spin8) ,@level3);
+@pphr9:darken( spin(@ppr,@spin9) ,@level4);
+
+@pphd1:lighten( spin(@ppd,@spin1) ,@level4);
+@pphd2:lighten( spin(@ppd,@spin2) ,@level3);
+@pphd3:lighten( spin(@ppd,@spin3) ,@level2);
+@pphd4:lighten( spin(@ppd,@spin4) ,@level1);
+@pphd5:lighten( spin(@ppd,@spin5) ,@level0);
+@pphd6:darken( spin(@ppd,@spin6) ,@level1);
+@pphd7:darken( spin(@ppd,@spin7) ,@level2);
+@pphd8:darken( spin(@ppd,@spin8) ,@level3);
+@pphd9:darken( spin(@ppd,@spin9) ,@level4);
+
+@pihl1:lighten( spin(@pil,@spin1) ,@level4);
+@pihl2:lighten( spin(@pil,@spin2) ,@level3);
+@pihl3:lighten( spin(@pil,@spin3) ,@level2);
+@pihl4:lighten( spin(@pil,@spin4) ,@level1);
+@pihl5:lighten( spin(@pil,@spin5) ,@level0);
+@pihl6:darken( spin(@pil,@spin6) ,@level1);
+@pihl7:darken( spin(@pil,@spin7) ,@level2);
+@pihl8:darken( spin(@pil,@spin8) ,@level3);
+@pihl9:darken( spin(@pil,@spin9) ,@level4);
+
+@pihm1:lighten( spin(@pim,@spin1) ,@level4);
+@pihm2:lighten( spin(@pim,@spin2) ,@level3);
+@pihm3:lighten( spin(@pim,@spin3) ,@level2);
+@pihm4:lighten( spin(@pim,@spin4) ,@level1);
+@pihm5:lighten( spin(@pim,@spin5) ,@level0);
+@pihm6:darken( spin(@pim,@spin6) ,@level1);
+@pihm7:darken( spin(@pim,@spin7) ,@level2);
+@pihm8:darken( spin(@pim,@spin8) ,@level3);
+@pihm9:darken( spin(@pim,@spin9) ,@level4);
+
+@pihr1:lighten( spin(@pir,@spin1) ,@level4);
+@pihr2:lighten( spin(@pir,@spin2) ,@level3);
+@pihr3:lighten( spin(@pir,@spin3) ,@level2);
+@pihr4:lighten( spin(@pir,@spin4) ,@level1);
+@pihr5:lighten( spin(@pir,@spin5) ,@level0);
+@pihr6:darken( spin(@pir,@spin6) ,@level1);
+@pihr7:darken( spin(@pir,@spin7) ,@level2);
+@pihr8:darken( spin(@pir,@spin8) ,@level3);
+@pihr9:darken( spin(@pir,@spin9) ,@level4);
+
+@pihd1:lighten( spin(@pid,@spin1) ,@level4);
+@pihd2:lighten( spin(@pid,@spin2) ,@level3);
+@pihd3:lighten( spin(@pid,@spin3) ,@level2);
+@pihd4:lighten( spin(@pid,@spin4) ,@level1);
+@pihd5:lighten( spin(@pid,@spin5) ,@level0);
+@pihd6:darken( spin(@pid,@spin6) ,@level1);
+@pihd7:darken( spin(@pid,@spin7) ,@level2);
+@pihd8:darken( spin(@pid,@spin8) ,@level3);
+@pihd9:darken( spin(@pid,@spin9) ,@level4);
+
+@pvhl1:lighten( spin(@pvl,@spin1) ,@level4);
+@pvhl2:lighten( spin(@pvl,@spin2) ,@level3);
+@pvhl3:lighten( spin(@pvl,@spin3) ,@level2);
+@pvhl4:lighten( spin(@pvl,@spin4) ,@level1);
+@pvhl5:lighten( spin(@pvl,@spin5) ,@level0);
+@pvhl6:darken( spin(@pvl,@spin6) ,@level1);
+@pvhl7:darken( spin(@pvl,@spin7) ,@level2);
+@pvhl8:darken( spin(@pvl,@spin8) ,@level3);
+@pvhl9:darken( spin(@pvl,@spin9) ,@level4);
+
+@pvhm1:lighten( spin(@pvm,@spin1) ,@level4);
+@pvhm2:lighten( spin(@pvm,@spin2) ,@level3);
+@pvhm3:lighten( spin(@pvm,@spin3) ,@level2);
+@pvhm4:lighten( spin(@pvm,@spin4) ,@level1);
+@pvhm5:lighten( spin(@pvm,@spin5) ,@level0);
+@pvhm6:darken( spin(@pvm,@spin6) ,@level1);
+@pvhm7:darken( spin(@pvm,@spin7) ,@level2);
+@pvhm8:darken( spin(@pvm,@spin8) ,@level3);
+@pvhm9:darken( spin(@pvm,@spin9) ,@level4);
+
+@pvhr1:lighten( spin(@pvr,@spin1) ,@level4);
+@pvhr2:lighten( spin(@pvr,@spin2) ,@level3);
+@pvhr3:lighten( spin(@pvr,@spin3) ,@level2);
+@pvhr4:lighten( spin(@pvr,@spin4) ,@level1);
+@pvhr5:lighten( spin(@pvr,@spin5) ,@level0);
+@pvhr6:darken( spin(@pvr,@spin6) ,@level1);
+@pvhr7:darken( spin(@pvr,@spin7) ,@level2);
+@pvhr8:darken( spin(@pvr,@spin8) ,@level3);
+@pvhr9:darken( spin(@pvr,@spin9) ,@level4);
+
+@pvhd1:lighten( spin(@pvd,@spin1) ,@level4);
+@pvhd2:lighten( spin(@pvd,@spin2) ,@level3);
+@pvhd3:lighten( spin(@pvd,@spin3) ,@level2);
+@pvhd4:lighten( spin(@pvd,@spin4) ,@level1);
+@pvhd5:lighten( spin(@pvd,@spin5) ,@level0);
+@pvhd6:darken( spin(@pvd,@spin6) ,@level1);
+@pvhd7:darken( spin(@pvd,@spin7) ,@level2);
+@pvhd8:darken( spin(@pvd,@spin8) ,@level3);
+@pvhd9:darken( spin(@pvd,@spin9) ,@level4);
+
+@vihl1:lighten( spin(@vil,@spin1) ,@level4);
+@vihl2:lighten( spin(@vil,@spin2) ,@level3);
+@vihl3:lighten( spin(@vil,@spin3) ,@level2);
+@vihl4:lighten( spin(@vil,@spin4) ,@level1);
+@vihl5:lighten( spin(@vil,@spin5) ,@level0);
+@vihl6:darken( spin(@vil,@spin6) ,@level1);
+@vihl7:darken( spin(@vil,@spin7) ,@level2);
+@vihl8:darken( spin(@vil,@spin8) ,@level3);
+@vihl9:darken( spin(@vil,@spin9) ,@level4);
+
+@vihm1:lighten( spin(@vim,@spin1) ,@level4);
+@vihm2:lighten( spin(@vim,@spin2) ,@level3);
+@vihm3:lighten( spin(@vim,@spin3) ,@level2);
+@vihm4:lighten( spin(@vim,@spin4) ,@level1);
+@vihm5:lighten( spin(@vim,@spin5) ,@level0);
+@vihm6:darken( spin(@vim,@spin6) ,@level1);
+@vihm7:darken( spin(@vim,@spin7) ,@level2);
+@vihm8:darken( spin(@vim,@spin8) ,@level3);
+@vihm9:darken( spin(@vim,@spin9) ,@level4);
+
+@vihr1:lighten( spin(@vir,@spin1) ,@level4);
+@vihr2:lighten( spin(@vir,@spin2) ,@level3);
+@vihr3:lighten( spin(@vir,@spin3) ,@level2);
+@vihr4:lighten( spin(@vir,@spin4) ,@level1);
+@vihr5:lighten( spin(@vir,@spin5) ,@level0);
+@vihr6:darken( spin(@vir,@spin6) ,@level1);
+@vihr7:darken( spin(@vir,@spin7) ,@level2);
+@vihr8:darken( spin(@vir,@spin8) ,@level3);
+@vihr9:darken( spin(@vir,@spin9) ,@level4);
+
+@vihd1:lighten( spin(@vid,@spin1) ,@level4);
+@vihd2:lighten( spin(@vid,@spin2) ,@level3);
+@vihd3:lighten( spin(@vid,@spin3) ,@level2);
+@vihd4:lighten( spin(@vid,@spin4) ,@level1);
+@vihd5:lighten( spin(@vid,@spin5) ,@level0);
+@vihd6:darken( spin(@vid,@spin6) ,@level1);
+@vihd7:darken( spin(@vid,@spin7) ,@level2);
+@vihd8:darken( spin(@vid,@spin8) ,@level3);
+@vihd9:darken( spin(@vid,@spin9) ,@level4);
+
+@vrhl1:lighten( spin(@vrl,@spin1) ,@level4);
+@vrhl2:lighten( spin(@vrl,@spin2) ,@level3);
+@vrhl3:lighten( spin(@vrl,@spin3) ,@level2);
+@vrhl4:lighten( spin(@vrl,@spin4) ,@level1);
+@vrhl5:lighten( spin(@vrl,@spin5) ,@level0);
+@vrhl6:darken( spin(@vrl,@spin6) ,@level1);
+@vrhl7:darken( spin(@vrl,@spin7) ,@level2);
+@vrhl8:darken( spin(@vrl,@spin8) ,@level3);
+@vrhl9:darken( spin(@vrl,@spin9) ,@level4);
+
+@vrhm1:lighten( spin(@vrm,@spin1) ,@level4);
+@vrhm2:lighten( spin(@vrm,@spin2) ,@level3);
+@vrhm3:lighten( spin(@vrm,@spin3) ,@level2);
+@vrhm4:lighten( spin(@vrm,@spin4) ,@level1);
+@vrhm5:lighten( spin(@vrm,@spin5) ,@level0);
+@vrhm6:darken( spin(@vrm,@spin6) ,@level1);
+@vrhm7:darken( spin(@vrm,@spin7) ,@level2);
+@vrhm8:darken( spin(@vrm,@spin8) ,@level3);
+@vrhm9:darken( spin(@vrm,@spin9) ,@level4);
+
+@vrhr1:lighten( spin(@vrr,@spin1) ,@level4);
+@vrhr2:lighten( spin(@vrr,@spin2) ,@level3);
+@vrhr3:lighten( spin(@vrr,@spin3) ,@level2);
+@vrhr4:lighten( spin(@vrr,@spin4) ,@level1);
+@vrhr5:lighten( spin(@vrr,@spin5) ,@level0);
+@vrhr6:darken( spin(@vrr,@spin6) ,@level1);
+@vrhr7:darken( spin(@vrr,@spin7) ,@level2);
+@vrhr8:darken( spin(@vrr,@spin8) ,@level3);
+@vrhr9:darken( spin(@vrr,@spin9) ,@level4);
+
+@vrhd1:lighten( spin(@vrd,@spin1) ,@level4);
+@vrhd2:lighten( spin(@vrd,@spin2) ,@level3);
+@vrhd3:lighten( spin(@vrd,@spin3) ,@level2);
+@vrhd4:lighten( spin(@vrd,@spin4) ,@level1);
+@vrhd5:lighten( spin(@vrd,@spin5) ,@level0);
+@vrhd6:darken( spin(@vrd,@spin6) ,@level1);
+@vrhd7:darken( spin(@vrd,@spin7) ,@level2);
+@vrhd8:darken( spin(@vrd,@spin8) ,@level3);
+@vrhd9:darken( spin(@vrd,@spin9) ,@level4);
+
+
