@@ -17,8 +17,6 @@
 
 <img src="./demo/AyinColorV1-top.png" width="800"/>
 
-
-
 取色案例如下：
 
 - 红色-`rel5`
@@ -265,11 +263,15 @@ Less代码
 
 
 
-# 任意项目中使用
+# 项目中使用
 
 **AyinColorV1、V2的JS版本和CSS版均已开源**，可以随意在任意项目上使用（需保留包中的声明信息）。
 
 **npm地址如下 [AyinColor](https://www.npmjs.com/package/ayin-color?activeTab=readme)**
+
+从NPM服务器安装
+`npm i ayin-color --save`
+
 
 其内部文件列表如下：
 
@@ -320,7 +322,7 @@ css: {
         }
     }
 },
-
+```
 
 -----
 
