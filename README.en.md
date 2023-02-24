@@ -86,7 +86,7 @@ Please click [here](https://www.bilibili.com/video/BV1kG411h7Px/?vd_source=4f373
 - **Indigo**-hue=240
 - **purple**-hue=270
 - **pink**-hue=300
-- **Roland Red**-hue=330
+- **violetred**-hue=330
 
 If it is offset by 30 degrees again, 330+30=360 degrees, it actually returns to the position of 0 degrees
 
@@ -106,7 +106,8 @@ As shown below:
 - **red** `re`
    - red-orange `ro`
 - **orange** `or`
-   -orange-yellow `oy`
+   - orange-yellow `oy`
+
 - **yellow** `ye`
    - yellow-chartreuse `yc`
 - **chartreuse ** `ch`
