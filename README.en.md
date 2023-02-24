@@ -77,15 +77,15 @@ Please click [here](https://www.bilibili.com/video/BV1kG411h7Px/?vd_source=4f373
 
 - **red**-hue=0
 - **orange**-hue=30
-- **黄**-hue=60
-- **grass green**-hue=90
-- **Green**-hue=120
-- **water green**-hue=150
-- **Blue**-hue=180
+- **yellow**-hue=60
+- **chartreuse**-hue=90
+- **green**-hue=120
+- **aquamarine**-hue=150
+- **cyan**-hue=180
 - **blue**-hue=210
 - **Indigo**-hue=240
-- **Purple**-hue=270
-- **powder**-hue=300
+- **purple**-hue=270
+- **pink**-hue=300
 - **Roland Red**-hue=330
 
 If it is offset by 30 degrees again, 330+30=360 degrees, it actually returns to the position of 0 degrees
@@ -103,31 +103,31 @@ As shown below:
 
 **Chinese and English names and abbreviations of 25 basic colors:**
 
-- **红**-red `re`
+- **red** `re`
    - red-orange `ro`
-- **Orange**-orange `or`
+- **orange** `or`
    -orange-yellow `oy`
-- **黄**-yellow `ye`
-   - yellow-grass green-yellow-chartreuse `yc`
-- **grass green** -chartreuse `ch`
-   - Grass green-green-chartreuse-green `cg`
-- **green**-green `gr`
-   - Green-water green-green-aquamarine `ga`
-- **Aqua Green**-aquamarine `aq`
-   - Aquamarine-cyan `ac`
-- **cyan**-cyan `cy`
-   - cyan-cyan-blue `cb`
-- **Blue**-blue `bl`
-   - blue indigo-blue-indigo `bi`
-- **Indigo**-indigo `in`
+- **yellow** `ye`
+   - yellow-chartreuse `yc`
+- **chartreuse ** `ch`
+   - chartreuse-green `cg`
+- **green** `gr`
+   - green-aquamarine `ga`
+- **aquamarine**- `aq`
+   - aquamarine-cyan `ac`
+- **cyan** `cy`
+   - cyan-blue `cb`
+- **blue** `bl`
+   - blue-indigo `bi`
+- **indigo** `in`
    - indigo-purple `ip`
-- **紫**-purple `pu`
-   - Purple pink-purple-pink `pp`
-- **Pink**-pink `pi`
-   - Pink-magenta-pink-violetred `pv`
-- **Roland Red**-violetred `vi`
-   - Roland red-red-violetred-red `vr`
-- **gray**-gray `gy`
+- **purple** `pu`
+   - purple-pink `pp`
+- **pink** `pi`
+   - pink-violetred `pv`
+- **violetred** `vi`
+   - violetred-red `vr`
+- **gray** `gy`
 
 
 
