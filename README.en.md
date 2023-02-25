@@ -2,13 +2,15 @@ English | [简体中文](./README.md)
 
 Translated by google
 
-
 <p align="center">
-   <a href="http://124.222.103.91/">Digital Cube Demo Station</a> •
-   <a href="http://124.222.103.91:8080/">Digital Cube Documentation</a> •
+   <a href="http://124.222.103.91/">DigitCube Demo</a> •
+   <a href="http://124.222.103.91:8080/">DigitCube Doc</a> •
    <a href="https://www.npmjs.com/package/ayin-color">AyinColor Npm</a> •
-   <a href="https://space.bilibili.com/302402751">Bili Video Blog</a>
+   <a href="https://www.youtube.com/channel/UCrovLbzt69nNiIy6abqJ5xw">Youtube</a> •
+  <a href="https://github.com/ayin86/ayin-color">Github</a> •
+  <a href="https://gitee.com/ayin86/ayin-color">Gitee</a>
 </p>
+
 
 <h1 align="center">
 <b>AyinColor</b>
@@ -30,6 +32,7 @@ If you just use it, please read the documentation and configure it according to 
 
 - **[V1 color table](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)**
 - **[V2 color table](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)**
+- **[Video Tutorial](https://www.youtube.com/watch?v=B_jdqh9x1eg&t=3s&ab_channel=aYinCN)**
 
 Gitee cannot recognize the color values in html tags, so it cannot display the color table on this page.
 
@@ -185,9 +188,70 @@ At present, in the process of developing projects, the author uses the V1 versio
 
 -----
 
+
+# used in the project
+
+**The JS and CSS versions of AyinColorV1 and V2 are open source**, you can use and modify them on any project at will.
+
+**npm address is as follows [AyinColor](https://www.npmjs.com/package/ayin-color?activeTab=readme)**
+
+
+Its internal file list is as follows:
+
+- ayin-color.less (V1 for CSS version)
+- ayin-color-expand.less (V2 for CSS version)
+- ayin-color.js (for JS version)
+- ayin-color.json (the corresponding static color value of the JS version)
+- index.js (entry file)
+
+How to use the JS version:
+
+```js
+//npm installation, recommend cnpm or pnpm
+npm i ayin-color --save
+
+//Introduce in main.js
+import {AyinColor} from "ayin-color"
+Vue. use(AyinColor)
+```
+
+
+
+How to use the CSS version:
+
+```js
+//vue2 is configured in vue.config.js
+//Need to install less, less-loader, style-resources-loader before configuration
+pluginOptions: {
+     'style-resources-loader': {
+         preProcessor: 'less',
+             patterns: [
+                 path.resolve(__dirname, "./node_modules/ayin-color/ayin-color.less"),
+                 path.resolve(__dirname, "./node_modules/ayin-color/ayin-color-expand.less")
+             ]
+     }
+},
+    
+//Used in vue3+vite Configure in vite.config.js
+//Need to install less and less-loader before configuration
+css: {
+     preprocessorOptions: {
+         less: {
+             javascriptEnabled: true,
+             additionalData:`
+           @import "${path.resolve(__dirname, './node_modules/ayin-color/ayincolor.less')}";
+           @import "${path.resolve(__dirname, './node_modules/ayin-color/ayincolor-expand.less')}";
+          `
+         }
+     }
+},
+```
+
+-----
+
 # Used in JS code
 
-The JS versions of AyinColorV1 and V2 have been integrated in this framework and can be used directly.
+After the configuration is completed in the project, the JS versions of AyinColorV1 and V2 can be used globally.
 
 Use case code:
 
@@ -280,66 +344,6 @@ Commonly used are nothing more than fade, lighten, darken, etc. For other usage 
 -----
 
 
-
-# used in the project
-
-**The JS and CSS versions of AyinColorV1 and V2 are open source**, and can be used in any project at will (the declaration information in the package needs to be preserved).
-
-**npm address is as follows [AyinColor](https://www.npmjs.com/package/ayin-color?activeTab=readme)**
-
-
-Its internal file list is as follows:
-
-- ayin-color.less (V1 for CSS version)
-- ayin-color-expand.less (V2 for CSS version)
-- ayin-color.js (for JS version)
-- ayin-color.json (the corresponding static color value of the JS version)
-- index.js (entry file)
-
-How to use the JS version:
-
-```js
-//npm installation, recommend cnpm or pnpm
-npm i ayin-color --save
-
-//Introduce in main.js
-import {AyinColor} from "ayin-color"
-Vue. use(AyinColor)
-```
-
-
-
-How to use the CSS version:
-
-```js
-//vue2 is configured in vue.config.js
-//Need to install less, less-loader, style-resources-loader before configuration
-pluginOptions: {
-     'style-resources-loader': {
-         preProcessor: 'less',
-             patterns: [
-                 path.resolve(__dirname, "./node_modules/ayin-color/ayin-color.less"),
-                 path.resolve(__dirname, "./node_modules/ayin-color/ayin-color-expand.less")
-             ]
-     }
-},
-    
-//Used in vue3+vite Configure in vite.config.js
-//Need to install less and less-loader before configuration
-css: {
-     preprocessorOptions: {
-         less: {
-             javascriptEnabled: true,
-             additionalData:`
-           @import "${path.resolve(__dirname, './node_modules/ayin-color/ayincolor.less')}";
-           @import "${path.resolve(__dirname, './node_modules/ayin-color/ayincolor-expand.less')}";
-          `
-         }
-     }
-},
-```
-
------
 
 # color conversion tool
 

@@ -6,7 +6,9 @@
   <a href="http://124.222.103.91/">数字魔方演示站</a> •
   <a href="http://124.222.103.91:8080/">数字魔方文档</a> •
   <a href="https://www.npmjs.com/package/ayin-color">AyinColor Npm</a> •
-  <a href="https://space.bilibili.com/302402751">Bili视频博客</a>
+  <a href="https://space.bilibili.com/302402751">Bili视频博客</a> •
+  <a href="https://github.com/ayin86/ayin-color">Github</a> •
+  <a href="https://gitee.com/ayin86/ayin-color">Gitee</a>
 </p>
 
 <h1 align="center">
@@ -25,10 +27,12 @@
 
 
 
-**颜色表查看，请到这里** 
+**颜色表预览和视频教程，请到这里** 
 
 - **[V1颜色表](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)**   
 - **[V2颜色表](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)**
+
+- **[视频教程](https://www.bilibili.com/video/BV1kG411h7Px/)**
 
 Gitee无法识别html标签中的颜色值，所以无法在本页面展现颜色表。
 
@@ -185,9 +189,69 @@ V2版本是基于AyinColorFull把饱和度从10种减少到6种后而来。
 
 
 
+# 项目中使用
+
+**AyinColorV1、V2的JS版本和CSS版均已开源**，可以随意在任意项目上使用和修改。
+
+**npm地址如下 [AyinColor](https://www.npmjs.com/package/ayin-color?activeTab=readme)**
+
+
+其内部文件列表如下：
+
+- ayin-color.less（V1 for CSS版本）
+- ayin-color-expand.less（V2 for CSS版本）
+- ayin-color.js（for JS版本）
+- ayin-color.json（JS版本的对应的静态颜色值）
+- index.js（入口文件）
+
+JS版本使用方式：
+
+```js
+//npm安装，推荐cnpm或者pnpm
+npm i ayin-color --save
+
+//在main.js中引入
+import {AyinColor} from "ayin-color"
+Vue.use(AyinColor)
+```
+
+
+
+CSS版本使用方式：
+
+```js
+//vue2 在vue.config.js中配置
+//需要在配置前先安装 less、less-loader、style-resources-loader
+pluginOptions: {
+    'style-resources-loader': {
+        preProcessor: 'less',
+            patterns: [
+                path.resolve(__dirname, "./node_modules/ayin-color/ayin-color.less"),
+                path.resolve(__dirname, "./node_modules/ayin-color/ayin-color-expand.less")
+            ]
+    }
+},
+    
+//vue3+vite中使用 在 vite.config.js 中配置
+//需要在配置前先安装 less、less-loader
+css: {
+    preprocessorOptions: {
+        less: {
+            javascriptEnabled: true,
+            additionalData:`
+          		@import "${path.resolve(__dirname, './node_modules/ayin-color/ayincolor.less')}";
+          		@import "${path.resolve(__dirname, './node_modules/ayin-color/ayincolor-expand.less')}";
+         	`
+        }
+    }
+},
+```
+
+-----
+
 # JS代码中使用
 
-在此框架中已经集成了AyinColorV1和V2的JS版本，可以直接使用。
+当在项目中配置完毕后，即可全局使用AyinColorV1和V2的JS版本。
 
 使用案例代码：
 
@@ -281,65 +345,6 @@ Less代码
 
 
 
-# 项目中使用
-
-**AyinColorV1、V2的JS版本和CSS版均已开源**，可以随意在任意项目上使用（需保留包中的声明信息）。
-
-**npm地址如下 [AyinColor](https://www.npmjs.com/package/ayin-color?activeTab=readme)**
-
-
-其内部文件列表如下：
-
-- ayin-color.less（V1 for CSS版本）
-- ayin-color-expand.less（V2 for CSS版本）
-- ayin-color.js（for JS版本）
-- ayin-color.json（JS版本的对应的静态颜色值）
-- index.js（入口文件）
-
-JS版本使用方式：
-
-```js
-//npm安装，推荐cnpm或者pnpm
-npm i ayin-color --save
-
-//在main.js中引入
-import {AyinColor} from "ayin-color"
-Vue.use(AyinColor)
-```
-
-
-
-CSS版本使用方式：
-
-```js
-//vue2 在vue.config.js中配置
-//需要在配置前先安装 less、less-loader、style-resources-loader
-pluginOptions: {
-    'style-resources-loader': {
-        preProcessor: 'less',
-            patterns: [
-                path.resolve(__dirname, "./node_modules/ayin-color/ayin-color.less"),
-                path.resolve(__dirname, "./node_modules/ayin-color/ayin-color-expand.less")
-            ]
-    }
-},
-    
-//vue3+vite中使用 在 vite.config.js 中配置
-//需要在配置前先安装 less、less-loader
-css: {
-    preprocessorOptions: {
-        less: {
-            javascriptEnabled: true,
-            additionalData:`
-          		@import "${path.resolve(__dirname, './node_modules/ayin-color/ayincolor.less')}";
-          		@import "${path.resolve(__dirname, './node_modules/ayin-color/ayincolor-expand.less')}";
-         	`
-        }
-    }
-},
-```
-
------
 
 # 颜色转换工具
 
