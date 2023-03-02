@@ -30,8 +30,8 @@ If you just use it, please read the documentation and configure it according to 
 
 **Color chart view, please go here**
 
-- **[V1 color table](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)**
-- **[V2 color table](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)**
+- **[V1 color table](http://124.222.103.91:8080/component/b04--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)**
+- **[V2 color table](http://124.222.103.91:8080/component/b04--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)**
 - **[Video Tutorial](https://www.youtube.com/watch?v=B_jdqh9x1eg&t=3s&ab_channel=aYinCN)**
 
 Gitee cannot recognize the color values in html tags, so it cannot display the color table on this page.

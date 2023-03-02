@@ -29,8 +29,8 @@
 
 **颜色表预览和视频教程，请到这里** 
 
-- **[V1颜色表](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)**   
-- **[V2颜色表](http://124.222.103.91:8080/component/21--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)**
+- **[V1颜色表](http://124.222.103.91:8080/component/b04--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)**   
+- **[V2颜色表](http://124.222.103.91:8080/component/b04--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)**
 
 - **[视频教程](https://www.bilibili.com/video/BV1kG411h7Px/)**
 
