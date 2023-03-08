@@ -3,8 +3,8 @@
 
 
 <p align="center">
-  <a href="http://124.222.103.91/">数字魔方演示站</a> •
-  <a href="http://124.222.103.91:8080/">数字魔方文档</a> •
+  <a href="https://ayin86.com/">数字魔方演示站</a> •
+  <a href="https://doc.ayin86.com/">数字魔方文档</a> •
   <a href="https://www.npmjs.com/package/ayin-color">AyinColor Npm</a> •
   <a href="https://space.bilibili.com/302402751">Bili视频博客</a> •
   <a href="https://github.com/ayin86/ayin-color">Github</a> •
@@ -29,8 +29,8 @@
 
 **颜色表预览和视频教程，请到这里** 
 
-- **[V1颜色表](http://124.222.103.91:8080/component/b04--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)**   
-- **[V2颜色表](http://124.222.103.91:8080/component/b04--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)**
+- **[V1颜色表](https://doc.ayin86.com/component/b04--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v1)**   
+- **[V2颜色表](https://doc.ayin86.com/component/b04--ayin-color#%E9%A2%9C%E8%89%B2%E8%A1%A8v2)**
 
 - **[视频教程](https://www.bilibili.com/video/BV1kG411h7Px/)**
 

@@ -3,8 +3,8 @@ English | [简体中文](./README.md)
 Translated by google
 
 <p align="center">
-   <a href="http://124.222.103.91/">DigitCube Demo</a> •
-   <a href="http://124.222.103.91:8080/">DigitCube Doc</a> •
+   <a href="https://ayin86.com/">DigitCube Demo</a> •
+   <a href="https://doc.ayin86.com/">DigitCube Doc</a> •
    <a href="https://www.npmjs.com/package/ayin-color">AyinColor Npm</a> •
    <a href="https://www.youtube.com/channel/UCrovLbzt69nNiIy6abqJ5xw">Youtube</a> •
   <a href="https://github.com/ayin86/ayin-color">Github</a> •
@@ -30,8 +30,8 @@ If you just use it, please read the documentation and configure it according to 
 
 **Color chart view, please go here**
 
-- **[V1 color table](http://124.222.103.91:8080/en-US/component/b04--ayin-color#color-table-v1)**
-- **[V2 color table](http://124.222.103.91:8080/en-US/component/b04--ayin-color#color-table-v2)**
+- **[V1 color table](https://doc.ayin86.com/en-US/component/b04--ayin-color#color-table-v1)**
+- **[V2 color table](https://doc.ayin86.com/en-US/component/b04--ayin-color#color-table-v2)**
 - **[Video Tutorial](https://www.youtube.com/watch?v=B_jdqh9x1eg&t=3s&ab_channel=aYinCN)**
 
 Gitee cannot recognize the color values in html tags, so it cannot display the color table on this page.
